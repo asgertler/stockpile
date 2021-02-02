@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import { Layout, Menu } from 'antd'
 import {
@@ -17,6 +17,8 @@ import './App.css';
 const { Header, Content, Footer, Sider } = Layout
 
 function App() {
+  const today = new Date()
+  const year = today.getFullYear()
 
   return (
     <Layout>
@@ -185,7 +187,9 @@ function App() {
             </div>
         </Content>
 
-        <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+        <Footer style={{ textAlign: 'center' }}>
+          Stockpile ©{year} Created by Aaron Gertler
+        </Footer>
       </Layout>
     </Layout>
   );
