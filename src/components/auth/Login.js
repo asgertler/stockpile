@@ -14,17 +14,17 @@ export const Login = () => {
 
     const existingUserCheck = () => {
         return fetch(`http://localhost:8088/users?username=${username.current.state.value}`)
-            .then(res => res.json)
+            .then(res => res.json())
             .then(console.log(username.current.state.value))
     }
 
     const handleLogin = () => {
         existingUserCheck()
             .then(exists => {
-                if (exists) {
-                    localStorage.setItem('stockpileUser', exists.id)
+                if (exists !== undefined && exists !== false && exists.length > 0) {
+                    // localStorage.setItem('stockpileUser', exists.id)
                     // history.push("/")
-                    console.log(username)
+                    console.log(exists)
                 } else {
                     warning()
                 }
