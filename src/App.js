@@ -1,5 +1,7 @@
 import React from 'react'
+
 import { Login } from './components/auth/Login'
+import { Register } from './components/auth/Register'
 
 import { Layout, Menu } from 'antd'
 import {
@@ -12,8 +14,6 @@ import {
   UploadOutlined,
   VideoCameraOutlined
 } from '@ant-design/icons'
-
-import './App.sass';
 
 const { Header, Content, Footer, Sider } = Layout
 
@@ -66,6 +66,7 @@ function App() {
 
         <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
           <Login />
+          <Register />
         </Content>
 
         <Footer style={{ textAlign: 'center' }}>

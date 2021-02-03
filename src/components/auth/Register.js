@@ -1,20 +1,18 @@
 import React, { useRef } from 'react'
 import { useHistory } from 'react-router-dom'
 
-import { Row, Col, Form, Input, Button, Checkbox, message } from 'antd'
+import { Row, Col, Form, Input, Button, Checkbox } from 'antd'
 import { UserOutlined } from '@ant-design/icons'
 
-export const Login = props => {
+export const Register = props => {
     const username = useRef()
+    const existDialog = useRef()
     const history = useHistory()
-
-    const warning = () => {
-        message.warning('Username does not exist');
-    }
 
     const existingUserCheck = () => {
         return fetch(`http://localhost:8088/users?username=${username.current.value}`)
             .then(res => res.json)
+            .then(user => user.length ? user[0] : false)
     }
 
     const handleLogin = e => {
@@ -24,11 +22,15 @@ export const Login = props => {
             .then(exists => {
                 if (exists) {
                     localStorage.setItem('stockpileUser', exists.id)
-                    // history.push("/")
+                    history.push("/")
                 } else {
-                    warning()
+                    existDialog.current.showModal()
                 }
             })
+    }
+
+    const onFinish = (values) => {
+        console.log('Received values of form:', values)
     }
 
     return (
@@ -42,7 +44,7 @@ export const Login = props => {
                     initialValues={{
                         remember: true,
                     }}
-                    onFinish={handleLogin}
+                    onFinish={onFinish}
                 >
                     <Form.Item
                         name="username"
@@ -54,7 +56,7 @@ export const Login = props => {
                         ]}
                     >
                         <Input prefix={<UserOutlined className="site-form-item-icon" />}
-                            placeholder="Username" ref={username} />
+                            placeholder="Username" />
                     </Form.Item>
 
                     <Form.Item>
