@@ -25,7 +25,7 @@ function App() {
       <Sider id='sidebarMain' style={{ overflow: 'auto', height: '100vh', position: 'sticky', top: 0, left: 0 }} collapsible>
         <div id='logo' />
 
-        <Menu theme='dark' mode='inline' defaultSelectedKeys={['1']}>
+        <Menu theme='dark' mode='inline' defaultSelectedKeys={['1']} id='sidebarMainUl'>
           <Menu.Item key='1' icon={<UserOutlined />}>
             nav 1
             </Menu.Item>
