@@ -12,7 +12,7 @@ import {
   VideoCameraOutlined
 } from '@ant-design/icons'
 
-import './App.css';
+import './App.sass';
 
 const { Header, Content, Footer, Sider } = Layout
 
@@ -22,10 +22,10 @@ function App() {
 
   return (
     <Layout>
-      <Sider style={{ overflow: 'auto', height: '100vh', position: 'sticky', top: 0, left: 0 }} collapsible>
+      <Sider id='sidebarMain' style={{ overflow: 'auto', height: '100vh', position: 'sticky', top: 0, left: 0 }} collapsible>
         <div id='logo' />
 
-        <Menu theme='dark' mode='inline' defaultSelectedKeys={['4']}>
+        <Menu theme='dark' mode='inline' defaultSelectedKeys={['1']}>
           <Menu.Item key='1' icon={<UserOutlined />}>
             nav 1
             </Menu.Item>
