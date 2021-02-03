@@ -4,8 +4,8 @@ import { useHistory } from 'react-router-dom'
 import { Row, Col, Form, Input, Button, Checkbox, message } from 'antd'
 import { UserOutlined } from '@ant-design/icons'
 
-export const Login = props => {
-    const username = useRef()
+export const Login = () => {
+    const username = useRef(null)
     const history = useHistory()
 
     const warning = () => {
@@ -13,18 +13,18 @@ export const Login = props => {
     }
 
     const existingUserCheck = () => {
-        return fetch(`http://localhost:8088/users?username=${username.current.value}`)
+        return fetch(`http://localhost:8088/users?username=${username.current.state.value}`)
             .then(res => res.json)
+            .then(console.log(username.current.state.value))
     }
 
-    const handleLogin = e => {
-        e.preventDefault()
-
+    const handleLogin = () => {
         existingUserCheck()
             .then(exists => {
                 if (exists) {
                     localStorage.setItem('stockpileUser', exists.id)
                     // history.push("/")
+                    console.log(username)
                 } else {
                     warning()
                 }
