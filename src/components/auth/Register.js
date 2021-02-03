@@ -5,8 +5,9 @@ import { Row, Col, Form, Input, Button, Checkbox } from 'antd'
 import { UserOutlined } from '@ant-design/icons'
 
 export const Register = props => {
+    const firstName = useRef()
+    const lastName = useRef()
     const username = useRef()
-    const existDialog = useRef()
     const history = useHistory()
 
     const existingUserCheck = () => {
@@ -16,27 +17,20 @@ export const Register = props => {
     }
 
     const handleLogin = e => {
-        e.preventDefault()
-
         existingUserCheck()
             .then(exists => {
                 if (exists) {
                     localStorage.setItem('stockpileUser', exists.id)
-                    history.push("/")
+                    // history.push("/")
                 } else {
-                    existDialog.current.showModal()
+
                 }
             })
     }
-
-    const onFinish = (values) => {
-        console.log('Received values of form:', values)
-    }
-
     return (
         <Row justify='center' align='middle' className='auth-container'>
             <Col xs={24} lg={12} className='auth-form-container'>
-                <h2>Login</h2>
+                <h2>Register</h2>
 
                 <Form
                     name="normal_login"
@@ -44,8 +38,34 @@ export const Register = props => {
                     initialValues={{
                         remember: true,
                     }}
-                    onFinish={onFinish}
+                    onFinish={handleLogin}
                 >
+                    <Form.Item
+                        name="firstName"
+                        rules={[
+                            {
+                                required: true,
+                                message: 'Please input your first name!',
+                            },
+                        ]}
+                    >
+                        <Input prefix={<UserOutlined className="site-form-item-icon" />}
+                            placeholder="First Name" ref={firstName} />
+                    </Form.Item>
+
+                    <Form.Item
+                        name="lastName"
+                        rules={[
+                            {
+                                required: true,
+                                message: 'Please input your last name!',
+                            },
+                        ]}
+                    >
+                        <Input prefix={<UserOutlined className="site-form-item-icon" />}
+                            placeholder="lastName" ref={lastName} />
+                    </Form.Item>
+
                     <Form.Item
                         name="username"
                         rules={[
@@ -56,24 +76,19 @@ export const Register = props => {
                         ]}
                     >
                         <Input prefix={<UserOutlined className="site-form-item-icon" />}
-                            placeholder="Username" />
+                            placeholder="Username" ref={username} />
                     </Form.Item>
 
                     <Form.Item>
                         <Form.Item name="remember" valuePropName="unchecked" noStyle>
                             <Checkbox>I'm not a robot</Checkbox>
                         </Form.Item>
-
-                        <a className="login-form-forgot" href="">
-                            Forgot username
-                        </a>
                     </Form.Item>
 
                     <Form.Item>
                         <Button type="primary" htmlType="submit" className="login-form-button">
-                            Log in
+                            Register
                         </Button>
-                        Or <a href="">register now!</a>
                     </Form.Item>
                 </Form>
             </Col>

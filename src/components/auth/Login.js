@@ -23,7 +23,6 @@ export const Login = () => {
                 if (exists !== undefined && exists !== false && exists.length > 0) {
                     localStorage.setItem('stockpileUser', exists[0].id)
                     // history.push("/")
-                    console.log(exists)
                 } else {
                     warning()
                 }
@@ -48,7 +47,7 @@ export const Login = () => {
                         rules={[
                             {
                                 required: true,
-                                message: 'Please input your Username!',
+                                message: 'Please input your username!',
                             },
                         ]}
                     >
