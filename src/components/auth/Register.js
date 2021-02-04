@@ -40,7 +40,7 @@ export const Register = () => {
                         .then(createdUser => {
                             if (createdUser.hasOwnProperty('id')) {
                                 localStorage.setItem('stockpileUser', createdUser.id)
-                                // history.push('/')
+                                history.push('/')
                             }
                         })
                 } else {

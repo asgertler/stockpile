@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useHistory, Link } from 'react-router-dom'
 
 import { Row, Col, Form, Input, Button, Checkbox, message } from 'antd'
 import { UserOutlined } from '@ant-design/icons'
@@ -22,7 +22,7 @@ export const Login = () => {
             .then(exists => {
                 if (exists !== undefined && exists !== false && exists.length > 0) {
                     localStorage.setItem('stockpileUser', exists[0].id)
-                    // history.push("/")
+                    history.push("/")
                 } else {
                     warning()
                 }
@@ -69,7 +69,7 @@ export const Login = () => {
                         <Button type="primary" htmlType="submit" className="login-form-button">
                             Log in
                         </Button>
-                        Or <a href="">register now!</a>
+                        Or <Link to='/register'>register now!</Link>
                     </Form.Item>
                 </Form>
             </Col>
