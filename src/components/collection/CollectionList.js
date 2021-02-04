@@ -1,12 +1,14 @@
 import React, { useContext, useEffect } from 'react'
-import { useParams, useHistory } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { CollectionContext } from './CollectionProvider'
 import { CollectionCard } from './CollectionCard'
 
-export const Collection List = () => {
-    const { collections, getCollections } = useContext(CollectionContext)
+import { Menu } from 'antd'
 
+export const CollectionList = () => {
     const currentUser = parseInt(localStorage.getItem('stockpileUser'))
+
+    const { collections, getCollections } = useContext(CollectionContext)
 
     const { collectionId } = useParams()
 
@@ -14,9 +16,7 @@ export const Collection List = () => {
         getCollections()
     }, [collectionId])
 
-    const history = useHistory()
-
-    const userCollections = collections.filter(collection => collection.userId = currentUser)
+    const userCollections = collections.filter(collection => collection.userId === currentUser)
 
     return (
         <Menu theme='dark' mode='inline' id='sidebarMainUl'>
