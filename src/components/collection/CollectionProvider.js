@@ -2,7 +2,7 @@ import React, { useState, createContext } from 'react'
 
 export const CollectionContext = createContext()
 
-export const ConllectionProvider = (props) => {
+export const CollectionProvider = (props) => {
     const [collections, setCollections] = useState([])
 
     const getCollections = () => {
@@ -46,10 +46,10 @@ export const ConllectionProvider = (props) => {
     }
 
     return (
-        <CollectionContext value={{
+        <CollectionContext.Provider value={{
             collections, getCollections, addCollection, editCollection, deleteCollection, getCollectionById
         }}>
             {props.children}
-        </CollectionContext>
+        </CollectionContext.Provider>
     )
 }
