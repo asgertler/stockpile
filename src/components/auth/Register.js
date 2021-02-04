@@ -1,32 +1,54 @@
 import React, { useRef } from 'react'
 import { useHistory } from 'react-router-dom'
 
-import { Row, Col, Form, Input, Button, Checkbox } from 'antd'
+import { Row, Col, Form, Input, Button, Checkbox, message } from 'antd'
 import { UserOutlined } from '@ant-design/icons'
 
-export const Register = props => {
-    const firstName = useRef()
-    const lastName = useRef()
-    const username = useRef()
+export const Register = () => {
+    const firstName = useRef(null)
+    const lastName = useRef(null)
+    const username = useRef(null)
     const history = useHistory()
 
-    const existingUserCheck = () => {
-        return fetch(`http://localhost:8088/users?username=${username.current.value}`)
-            .then(res => res.json)
-            .then(user => user.length ? user[0] : false)
+    const warning = () => {
+        message.warning('Username already exists');
     }
 
-    const handleLogin = e => {
+    const existingUserCheck = () => {
+        return fetch(`http://localhost:8088/users?username=${username.current.state.value}`)
+            .then(res => res.json())
+    }
+
+    const handleRegister = () => {
         existingUserCheck()
             .then(exists => {
-                if (exists) {
-                    localStorage.setItem('stockpileUser', exists.id)
-                    // history.push("/")
+                console.log(exists)
+                if (!exists && exists.length === 0) {
+                    fetch('http://localhost:8088/users', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            name: `${firstName.current.state.value} ${lastName.current.state.value}`,
+                            username: `${username.current.state.value}`,
+                            photo: undefined,
+                            admin: false
+                        })
+                    })
+                        .then(res => res.json())
+                        .then(createdUser => {
+                            if (createdUser.hasOwnProperty('id')) {
+                                localStorage.setItem('stockpileUser', createdUser.id)
+                                // history.push('/')
+                            }
+                        })
                 } else {
-
+                    warning()
                 }
             })
     }
+
     return (
         <Row justify='center' align='middle' className='auth-container'>
             <Col xs={24} lg={12} className='auth-form-container'>
@@ -38,7 +60,7 @@ export const Register = props => {
                     initialValues={{
                         remember: true,
                     }}
-                    onFinish={handleLogin}
+                    onFinish={handleRegister}
                 >
                     <Form.Item
                         name="firstName"
