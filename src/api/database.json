@@ -13,6 +13,12 @@
             "username": "ansel.adams",
             "photo": "https://commons.wikimedia.org/wiki/File:Ansel_Adams_and_camera.jpg#/media/File:Ansel_Adams_and_camera.jpg",
             "admin": false
+        },
+        {
+            "name": "Dorothea Lange",
+            "username": "dorothea.lange",
+            "admin": false,
+            "id": 3
         }
     ],
     "teams": [

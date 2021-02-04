@@ -23,7 +23,7 @@ export const Register = () => {
         existingUserCheck()
             .then(console.log(username.current.state.value))
             .then(exists => {
-                if (exists.length !== 0) {
+                if (exists[0] === undefined) {
                     fetch('http://localhost:8088/users', {
                         method: 'POST',
                         headers: {
