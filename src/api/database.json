@@ -1,0 +1,80 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "Aaron Gertler",
+            "username": "aaron.gertler",
+            "photo": "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/12308453_3180332659839_4100614624798289788_n.jpg?_nc_cat=100&ccb=2&_nc_sid=09cbfe&_nc_ohc=C1zCFIbaQScAX8CCeuQ&_nc_ht=scontent-atl3-1.xx&oh=7f72d810b8b9a75aa2f2aff27e68611e&oe=603ED68B",
+            "admin": true
+        },
+        {
+            "id": 2,
+            "name": "Ansel Adams",
+            "username": "ansel.adams",
+            "photo": "https://commons.wikimedia.org/wiki/File:Ansel_Adams_and_camera.jpg#/media/File:Ansel_Adams_and_camera.jpg",
+            "admin": false
+        },
+        {
+            "name": "Dorothea Lange",
+            "username": "dorothea.lange",
+            "admin": false,
+            "id": 3
+        }
+    ],
+    "teams": [
+        {
+            "id": 1,
+            "userId": 1,
+            "collectionId": 1
+        }
+    ],
+    "teamUsers": [
+        {
+            "id": 1,
+            "userId": 1,
+            "teamId": 1
+        },
+        {
+            "id": 2,
+            "userId": 2,
+            "teamId": 1
+        }
+    ],
+    "messages": [
+        {
+            "id": 1,
+            "userId": 1,
+            "teamId": 1,
+            "message": "Welcome to Stockpile!",
+            "timestamp": "10/29/2020, 1:24 PM"
+        }
+    ],
+    "collections": [
+        {
+            "id": 1,
+            "userId": 1,
+            "name": "First Stockpile",
+            "desc": "The first stockpile ever put on here!"
+        }
+    ],
+    "gear": [
+        {
+            "id": 1,
+            "collectionId": 1,
+            "type": "Camera",
+            "name": "Canon EOS R",
+            "desc": "My personal mirrorless camera.",
+            "photo": "https://static.bhphoto.com/images/images500x500/canon_eos_r_mirrorless_digital_1536120359_1433711.jpg",
+            "available": true
+        }
+    ],
+    "gearUsers": [
+        {
+            "id": 1,
+            "userId": 1,
+            "gearId": 1,
+            "checkOut": "10/14/2020, 12:54 PM",
+            "checkIn": "10/18/2020, 3:14 PM"
+        }
+    ]
+}
