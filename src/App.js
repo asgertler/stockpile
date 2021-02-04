@@ -4,15 +4,13 @@ import { Login } from './components/auth/Login'
 import { Register } from './components/auth/Register'
 import { Sidebar } from './components/sidebar/Sidebar'
 import { TopBar } from './components/topbar/TopBar'
+import { Foot } from './components/footer/Foot'
 
 import { Layout } from 'antd'
 
-const { Content, Footer } = Layout
+const { Content } = Layout
 
 function App() {
-  const today = new Date()
-  const year = today.getFullYear()
-
   return (
     <Layout>
       <Sidebar />
@@ -25,9 +23,7 @@ function App() {
           <Register />
         </Content>
 
-        <Footer style={{ textAlign: 'center' }}>
-          Stockpile ©{year} Created by Aaron Gertler
-        </Footer>
+        <Foot />
       </Layout>
     </Layout>
   );
