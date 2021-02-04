@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Login } from './components/auth/Login'
 import { Register } from './components/auth/Register'
-import { Sidebar } from './components/Sidebar/Sidebar'
+import { Sidebar } from './components/sidebar/Sidebar'
 
 import { Layout } from 'antd'
 
