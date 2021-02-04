@@ -3,10 +3,11 @@ import React from 'react'
 import { Login } from './components/auth/Login'
 import { Register } from './components/auth/Register'
 import { Sidebar } from './components/sidebar/Sidebar'
+import { TopBar } from './components/topbar/TopBar'
 
 import { Layout } from 'antd'
 
-const { Header, Content, Footer, Sider } = Layout
+const { Content, Footer } = Layout
 
 function App() {
   const today = new Date()
@@ -17,7 +18,7 @@ function App() {
       <Sidebar />
 
       <Layout className='site-layout'>
-        <Header className='site-layout-background' style={{ padding: 0 }} />
+        <TopBar />
 
         <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
           <Login />
