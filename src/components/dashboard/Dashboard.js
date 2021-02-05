@@ -4,6 +4,7 @@ import { Sidebar } from '../sidebar/Sidebar'
 import { TopBar } from '../topbar/TopBar'
 import { Foot } from '../footer/Foot'
 
+import { DashboardViews } from './DashboardViews'
 import { CollectionProvider } from '../collection/CollectionProvider'
 
 import { Layout } from 'antd'
@@ -20,8 +21,8 @@ export const Dashboard = () => {
                     <TopBar />
 
                     <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
-                        Hello World
-                </Content>
+                        <DashboardViews />
+                    </Content>
 
                     <Foot />
                 </Layout>
