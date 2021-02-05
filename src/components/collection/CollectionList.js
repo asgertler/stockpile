@@ -1,9 +1,9 @@
 import React, { useContext, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import { CollectionContext } from './CollectionProvider'
-import { CollectionCard } from './CollectionCard'
 
 import { Menu } from 'antd'
+import { AppstoreOutlined } from '@ant-design/icons'
 
 export const CollectionList = () => {
     const currentUser = parseInt(localStorage.getItem('stockpileUser'))
@@ -21,8 +21,14 @@ export const CollectionList = () => {
     return (
         <Menu theme='dark' mode='inline' id='sidebarMainUl'>
             {
-                userCollections.map(collections => {
-                    return <CollectionCard key={collections.id} collection={collections} />
+                userCollections.map(collection => {
+                    return (
+                        <Menu.Item key={collection.id} icon={<AppstoreOutlined className='sidebar-links' />}>
+                            <Link to={`/collection/${collection.id}`}>
+                                {collection.name}
+                            </Link>
+                        </Menu.Item>
+                    )
                 })
             }
         </Menu>
