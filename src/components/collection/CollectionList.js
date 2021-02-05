@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { CollectionContext } from './CollectionProvider'
 
-import { Menu } from 'antd'
+import { Menu, Table, Tag, Space } from 'antd'
 import { AppstoreOutlined } from '@ant-design/icons'
 
 export const CollectionList = () => {
