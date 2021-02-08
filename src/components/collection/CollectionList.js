@@ -2,8 +2,8 @@ import React, { useContext, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { CollectionContext } from './CollectionProvider'
 
-import { Menu, Table, Tag, Space } from 'antd'
-import { AppstoreOutlined } from '@ant-design/icons'
+import { Menu } from 'antd'
+import { AppstoreOutlined, PlusCircleOutlined } from '@ant-design/icons'
 
 export const CollectionList = () => {
     const currentUser = parseInt(localStorage.getItem('stockpileUser'))
@@ -31,6 +31,13 @@ export const CollectionList = () => {
                     )
                 })
             }
+
+            <Menu.Item icon={<PlusCircleOutlined className='sidebar-links' />}>
+                <Link to={`/collection/new`} replace>
+                    Add New Collection
+                </Link>
+
+            </Menu.Item>
         </Menu>
     )
 }

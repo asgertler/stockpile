@@ -55,4 +55,42 @@ export const CollectionForm = () => {
             })
         }
     }
+
+    return (
+        <Row>
+            <Col xs={24}>
+                <Form
+                    name="collection-form"
+                    className="collection-form"
+                    initialValues={{
+                        remember: true,
+                    }}
+                >
+                    <Form.Item
+                        name="collectionName"
+                        rules={[
+                            {
+                                required: true,
+                                message: 'Please name your collection',
+                            },
+                        ]}
+                    >
+                        <Input placeholder="Collection Name" ref='' />
+                    </Form.Item>
+
+                    <Form.Item
+                        name="collectionDesc"
+                        rules={[
+                            {
+                                required: true,
+                                message: 'Please give your collection a short description',
+                            },
+                        ]}
+                    >
+                        <Input placeholder="Description (e.g., 'Gear stored in the office closet'" ref='' />
+                    </Form.Item>
+                </Form>
+            </Col>
+        </Row>
+    )
 }
