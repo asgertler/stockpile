@@ -3,18 +3,13 @@ import { useParams, useHistory } from 'react-router-dom'
 import { CollectionContext } from './CollectionProvider'
 import { CollectionForm } from './CollectionForm'
 
-import { Button, Row, Col, PageHeader, Table, Modal } from 'antd'
+import { Button, Row, Col, PageHeader, Table } from 'antd'
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons'
 
 export const Collection = () => {
     const { getCollectionById, deleteCollection } = useContext(CollectionContext)
 
     const [collection, setCollection] = useState([])
-    const [isModalVisible, setIsModalVisible] = useState(false)
-
-    const showModal = () => setIsModalVisible(true)
-    const handleOk = () => setIsModalVisible(false)
-    const handleCancel = () => setIsModalVisible(false)
 
     const { collectionId } = useParams()
 

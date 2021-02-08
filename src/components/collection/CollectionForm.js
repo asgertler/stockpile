@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useHistory, useParams } from 'react-router-dom'
 import { CollectionContext } from './CollectionProvider'
 
-import { Row, Col, Form, Input, Button, Checkbox, message, Modal } from 'antd'
+import { Row, Col, Form, Input, Button } from 'antd'
 
 export const CollectionForm = () => {
     const { getCollections, addCollection, getCollectionById, editCollection } = useContext(CollectionContext)
@@ -46,6 +46,7 @@ export const CollectionForm = () => {
                 desc: collection.desc,
                 shared: collection.shared
             })
+                .then(() => history.push(`/collection/${collection.id}`))
         } else {
             addCollection({
                 userId: currentUser,
@@ -53,17 +54,24 @@ export const CollectionForm = () => {
                 desc: collection.desc,
                 shared: collection.shared
             })
+                .then(history.push('/'))
         }
     }
 
+    console.log(collection.name)
+
     return (
-        <Row>
-            <Col xs={24}>
+        <Row justify='center' align='middle' className='form-container-r'>
+            <Col xs={24} lg={12} className='form-container-c'>
+                <h2>{collectionId ? 'Edit Collection' : 'Add New Collection'}</h2>
+
                 <Form
                     name="collection-form"
                     className="collection-form"
+                    initialValues={{ remember: true }}
+                    onFinish={constructNewCollection}
                     initialValues={{
-                        remember: true,
+                        ['name']: collection.name
                     }}
                 >
                     <Form.Item
@@ -75,7 +83,7 @@ export const CollectionForm = () => {
                             },
                         ]}
                     >
-                        <Input placeholder="Collection Name" ref='' />
+                        <Input placeholder="Collection Name" name='name' />
                     </Form.Item>
 
                     <Form.Item
@@ -87,7 +95,18 @@ export const CollectionForm = () => {
                             },
                         ]}
                     >
-                        <Input placeholder="Description (e.g., 'Gear stored in the office closet'" ref='' />
+                        <Input placeholder="Description (e.g., 'Gear stored in the office closet'"
+                            name='desc' defaultValue={collection.desc} />
+                    </Form.Item>
+
+                    <Form.Item className='form-btns-container'>
+                        <Button type='primary' className='form-btns' htmlType='submit' disabled={isLoading}>
+                            Submit
+                        </Button>
+
+                        <Button className='form-btns'>
+                            Cancel
+                        </Button>
                     </Form.Item>
                 </Form>
             </Col>
