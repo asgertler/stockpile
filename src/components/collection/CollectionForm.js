@@ -58,8 +58,6 @@ export const CollectionForm = () => {
         }
     }
 
-    console.log(collection.name)
-
     return (
         <Row justify='center' align='middle' className='form-container-r'>
             <Col xs={24} lg={12} className='form-container-c'>
@@ -71,11 +69,11 @@ export const CollectionForm = () => {
                     initialValues={{ remember: true }}
                     onFinish={constructNewCollection}
                     initialValues={{
-                        ['name']: collection.name
+                        name: [`${collection.name}`]
                     }}
                 >
                     <Form.Item
-                        name="collectionName"
+                        name="name"
                         rules={[
                             {
                                 required: true,
@@ -87,7 +85,7 @@ export const CollectionForm = () => {
                     </Form.Item>
 
                     <Form.Item
-                        name="collectionDesc"
+                        name="desc"
                         rules={[
                             {
                                 required: true,
@@ -95,8 +93,7 @@ export const CollectionForm = () => {
                             },
                         ]}
                     >
-                        <Input placeholder="Description (e.g., 'Gear stored in the office closet'"
-                            name='desc' defaultValue={collection.desc} />
+                        <Input placeholder="Description (e.g., 'Gear stored in the office closet'" name='desc' />
                     </Form.Item>
 
                     <Form.Item className='form-btns-container'>

@@ -30,7 +30,11 @@ export const Collection = () => {
                     title={collection.name}
                     subTitle={collection.desc}
                     extra={[
-                        <Button type="primary" shape='circle' icon={<EditOutlined />} />,
+                        <Button type="primary" shape='circle' icon={<EditOutlined />}
+                            onClick={() => {
+                                history.push(`/collection/${collection.id}/edit`)
+                            }}
+                        />,
                         <Button type="primary" shape='circle' icon={<DeleteOutlined />} danger />
                     ]}
                 />
