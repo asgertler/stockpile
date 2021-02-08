@@ -48,7 +48,8 @@
             "id": 1,
             "userId": 1,
             "name": "First Stockpile",
-            "desc": "The first stockpile ever put on here!"
+            "desc": "The first stockpile ever put on here!",
+            "shared": false
         }
     ],
     "gear": [

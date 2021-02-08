@@ -19,21 +19,6 @@ export const Collection = () => {
 
     const history = useHistory()
 
-    const routes = [
-        {
-            path: 'index',
-            breadcrumbName: 'First-level Menu'
-        },
-        {
-            path: 'first',
-            breadcrumbName: 'Second-level Menu'
-        },
-        {
-            path: 'second',
-            breadcrumbName: 'Third-level Menu'
-        }
-    ]
-
     useEffect(() => {
         getCollectionById(collectionId)
             .then((res) => {
@@ -47,7 +32,6 @@ export const Collection = () => {
                 <PageHeader
                     className='collection-page-header'
                     title={collection.name}
-                    breadcrumb={{ routes }}
                     subTitle={collection.desc}
                     extra={[
                         <Button type="primary" shape='circle' icon={<EditOutlined />} onClick={showModal} />,
