@@ -58,6 +58,8 @@ export const CollectionForm = () => {
         }
     }
 
+    console.log('name: ' + collection.name)
+
     return (
         <Row justify='center' align='middle' className='form-container-r'>
             <Col xs={24} lg={12} className='form-container-c'>
@@ -66,11 +68,11 @@ export const CollectionForm = () => {
                 <Form
                     name="collection-form"
                     className="collection-form"
-                    initialValues={{ remember: true }}
-                    onFinish={constructNewCollection}
                     initialValues={{
-                        name: [`${collection.name}`]
+                        'name': collection.name,
+                        'desc': collection.desc
                     }}
+                    onFinish={constructNewCollection}
                 >
                     <Form.Item
                         name="name"
@@ -101,7 +103,11 @@ export const CollectionForm = () => {
                             Submit
                         </Button>
 
-                        <Button className='form-btns'>
+                        <Button className='form-btns' disabled={isLoading} onClick={() => {
+                            collection.id ?
+                                history.push(`/collection/${collection.id}`) :
+                                history.push('/')
+                        }}>
                             Cancel
                         </Button>
                     </Form.Item>

@@ -32,7 +32,7 @@ export const CollectionList = () => {
                 })
             }
 
-            <Menu.Item icon={<PlusCircleOutlined className='sidebar-links' />}>
+            <Menu.Item icon={<PlusCircleOutlined className='sidebar-links' id='sidebar-new' />}>
                 <Link to={`/collection/new`} replace>
                     Add New Collection
                 </Link>
