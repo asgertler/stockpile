@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useHistory, useParams } from 'react-router-dom'
 import { GearContext } from './GearProvider'
 
-import { Row, Col, Form, Input, Button, message } from 'antd'
+import { Row, Col, Form, Input, Button, message, Select } from 'antd'
 
 export const GearForm = props => {
     const { getGear, addGear, getGearById, editGear } = useContext(GearContext)
@@ -69,12 +69,13 @@ export const GearForm = props => {
         } else {
             addGear({
                 userId: currentUser,
-                collectionId: collectionId,
+                collectionId: parseInt(collectionId),
                 type: gear.type,
+                name: gear.name,
                 desc: gear.desc,
-                available: gear.available
+                available: true
             })
-                .then(history.push(`/collection/${gear.collectionId}`))
+                .then(history.push(`/collection/${collectionId}`))
                 .then(toastCreate())
         }
     }
@@ -90,23 +91,17 @@ export const GearForm = props => {
                     className="collection-form"
                     onFinish={constructNewGear}
                 >
-                    <Form.Item name='type'
+                    <Form.Item
+                        name="type"
                         rules={[
                             {
                                 required: true,
-                                message: 'Please select a gear type',
+                                message: 'Please give your gear a type',
                             },
                         ]}
                     >
-                        <Select>
-                            <Select.Option value='Bag/Case'>Bag/Case</Select.Option>
-                            <Select.Option value='Camera'>Camera</Select.Option>
-                            <Select.Option value='Flash/Strobe'>Flash/Strobe</Select.Option>
-                            <Select.Option value='Lens'>Lens</Select.Option>
-                            <Select.Option value='Lens Filter'>Lens Filter</Select.Option>
-                            <Select.Option value='Memory Card'>Memory Card</Select.Option>
-                            <Select.Option value='Other'>Other</Select.Option>
-                        </Select>
+                        <Input name='type' placeholder="Gear Type"
+                            onChange={handleControlledInputChange} />
                     </Form.Item>
 
                     <Form.Item
@@ -114,11 +109,24 @@ export const GearForm = props => {
                         rules={[
                             {
                                 required: true,
-                                message: 'Please select a gear type',
+                                message: 'Please give your gear a name',
                             },
                         ]}
                     >
-                        <Input name='name' placeholder="Collection Name"
+                        <Input name='name' placeholder="Gear Name"
+                            onChange={handleControlledInputChange} />
+                    </Form.Item>
+
+                    <Form.Item
+                        name="desc"
+                        rules={[
+                            {
+                                required: true,
+                                message: 'Please give your gear a description',
+                            },
+                        ]}
+                    >
+                        <Input name='desc' placeholder="Gear Description"
                             onChange={handleControlledInputChange} />
                     </Form.Item>
 

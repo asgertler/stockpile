@@ -75,6 +75,15 @@
       "desc": "Mid-range lens for events.",
       "photo": "https://static.bhphoto.com/images/images500x500/canon_eos_r_mirrorless_digital_1536120359_1433711.jpg",
       "available": false
+    },
+    {
+      "userId": 1,
+      "collectionId": 1,
+      "type": "Lens",
+      "name": "50mm",
+      "desc": "Canon EF f/1.8",
+      "available": true,
+      "id": 3
     }
   ],
   "gearUsers": [
