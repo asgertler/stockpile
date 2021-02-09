@@ -2,15 +2,19 @@ import React, { useContext, useEffect } from 'react'
 import { useHistory, useParams, Link } from 'react-router-dom'
 import { GearContext } from './GearProvider'
 
-import { Table, Tag } from 'antd'
+import { Table, Tag, message } from 'antd'
 
 export const GearList = (props) => {
     const currentUser = parseInt(localStorage.getItem('stockpileUser'))
     const currentCollection = props.collectionId
 
-    const { gear, getGear } = useContext(GearContext)
+    const { gear, getGear, deleteGear } = useContext(GearContext)
 
     const { gearId } = useParams()
+
+    const toastDelete = () => {
+        message.success('Collection was deleted');
+    }
 
     useEffect(() => {
         getGear()
@@ -56,12 +60,19 @@ export const GearList = (props) => {
             )
         },
         {
-            title: 'Edit',
+            title: 'Update',
             dataIndex: 'id',
-            key: 'edit',
-            render: edit => <>
-                <Link onClick={() => history.push(`/collection/${currentCollection}/gear/${edit}/edit`)}>
+            key: 'id',
+            render: id => <>
+                <Link onClick={() => history.push(`/collection/${currentCollection}/gear/${id}/edit`)}>
                     Edit
+                </Link>
+                &nbsp; / &nbsp;
+                <Link onClick={() => {
+                    deleteGear(id)
+                        .then(toastDelete())
+                }}>
+                    Delete
                 </Link>
             </>
         }
