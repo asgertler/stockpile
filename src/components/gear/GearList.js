@@ -4,8 +4,9 @@ import { GearContext } from './GearProvider'
 
 import { Table } from 'antd'
 
-export const GearList = () => {
+export const GearList = (props) => {
     const currentUser = parseInt(localStorage.getItem('stockpileUser'))
+    const currentCollection = props.collectionId
 
     const { gear, getGear } = useContext(GearContext)
 
@@ -15,9 +16,34 @@ export const GearList = () => {
         getGear()
     }, [gearId])
 
-    // const userCollections = collections.filter(collection => collection.userId === currentUser)
+    const col = [
+        {
+            title: 'Type',
+            dataIndex: 'type',
+            key: 'type'
+        },
+        {
+            title: 'Name',
+            dataIndex: 'name',
+            key: 'name'
+        },
+        {
+            title: 'Description',
+            dataIndex: 'description',
+            key: 'description'
+        },
+        {
+            title: 'Available',
+            dataIndex: 'available',
+            key: 'available'
+        }
+    ]
+
+    const dataSource = []
+
+    const collectionGear = gear.filter(gear => gear.collectionId === currentCollection)
 
     return (
-        <Table />
+        <Table columns={col} dataSource={dataSource} />
     )
 }

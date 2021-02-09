@@ -49,7 +49,7 @@ export const Collection = () => {
                     ]}
                 />
 
-                <GearList />
+                <GearList collectionId={collection.id} />
             </Col>
         </Row>
     )
