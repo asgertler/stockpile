@@ -45,8 +45,8 @@
         {
             "id": 1,
             "userId": 1,
-            "name": "First Stockpile",
-            "desc": "The first stockpile ever put on here!!!"
+            "name": "Home",
+            "desc": "Gear for freelance and personal use."
         }
     ],
     "gear": [

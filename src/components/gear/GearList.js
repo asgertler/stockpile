@@ -45,7 +45,12 @@ export const GearList = (props) => {
         {
             title: 'Available',
             dataIndex: 'available',
-            key: 'available'
+            key: 'available',
+            render: available => (
+                <Tag key={available} color={available ? 'green' : 'volcano'}>
+                    {available ? 'Yes' : 'No'}
+                </Tag>
+            )
         }
     ]
 
