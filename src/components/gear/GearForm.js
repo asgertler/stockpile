@@ -43,8 +43,8 @@ export const GearForm = props => {
                             type: gear.type,
                             name: gear.name,
                             desc: gear.desc,
+                            photo: gear.photo,
                             available: gear.available
-
                         })
                         setIsLoading(false)
                     })
