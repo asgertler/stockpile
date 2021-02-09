@@ -61,8 +61,8 @@
       "userId": 1,
       "collectionId": 1,
       "type": "Camera",
-      "name": "Canon EOS R",
-      "desc": "Mirrorless, full-frame, RF mount",
+      "name": "EOS R",
+      "desc": "Canon, mirrorless, full-frame, RF mount",
       "photo": "https://static.bhphoto.com/images/images500x500/canon_eos_r_mirrorless_digital_1536120359_1433711.jpg",
       "available": true
     },
@@ -71,8 +71,8 @@
       "userId": 1,
       "collectionId": 1,
       "type": "Lens",
-      "name": "Canon 70-200mm",
-      "desc": "Mid-range lens for events.",
+      "name": "70-200mm",
+      "desc": "Canon, EF, f/2.8",
       "photo": "https://static.bhphoto.com/images/images500x500/canon_eos_r_mirrorless_digital_1536120359_1433711.jpg",
       "available": false
     },
@@ -81,7 +81,7 @@
       "collectionId": 1,
       "type": "Lens",
       "name": "50mm",
-      "desc": "Canon EF f/1.8",
+      "desc": "Canon, EF, f/1.8",
       "available": true,
       "id": 3
     },
