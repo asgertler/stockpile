@@ -34,6 +34,14 @@ export const Collection = () => {
                     title={collection.name}
                     subTitle={collection.desc}
                     extra={[
+                        <Button id='addGearBtn' icon={<PlusOutlined />}
+                            onClick={() => {
+                                history.push(`/collection/${collection.id}/gear/new`)
+                            }}
+                        >
+                            Add Gear
+                        </Button>,
+
                         <Button type="primary" shape='circle' icon={<EditOutlined />}
                             onClick={() => {
                                 history.push(`/collection/${collection.id}/edit`)
@@ -48,14 +56,6 @@ export const Collection = () => {
                         />
                     ]}
                 />
-
-                <Button id='addGearBtn' icon={<PlusOutlined />}
-                    onClick={() => {
-                        history.push(`/collection/${collection.id}/gear/new`)
-                    }}
-                >
-                    Add Gear
-                </Button>
 
                 <GearList collectionId={collection.id} />
             </Col>

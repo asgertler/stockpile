@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import { useHistory, useParams, Link } from 'react-router-dom'
 import { GearContext } from './GearProvider'
 
-import { Table, Tag, message } from 'antd'
+import { Table, Tag, message, Image } from 'antd'
 
 export const GearList = (props) => {
     const currentUser = parseInt(localStorage.getItem('stockpileUser'))
@@ -29,6 +29,7 @@ export const GearList = (props) => {
         id: gear.id,
         type: gear.type,
         name: gear.name,
+        photo: gear.photo,
         description: gear.desc,
         available: gear.available
     }))
@@ -43,6 +44,12 @@ export const GearList = (props) => {
             title: 'Name',
             dataIndex: 'name',
             key: 'name'
+        },
+        {
+            title: 'Image',
+            dataIndex: 'photo',
+            key: 'photo',
+            render: photo => <Image height={48} style={{ width: 'auto' }} src={photo} />
         },
         {
             title: 'Description',
@@ -81,6 +88,7 @@ export const GearList = (props) => {
     ]
 
     return (
-        <Table bordered columns={col} dataSource={dataSource} />
+        <Table bordered columns={col} dataSource={dataSource}
+            pagination={{ position: ['topRight', 'bottomRight'] }} />
     )
 }
