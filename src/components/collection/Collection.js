@@ -3,7 +3,7 @@ import { useParams, useHistory } from 'react-router-dom'
 import { CollectionContext } from './CollectionProvider'
 import { CollectionForm } from './CollectionForm'
 
-import { Button, Row, Col, PageHeader, Table } from 'antd'
+import { Button, Row, Col, PageHeader, Table, message } from 'antd'
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons'
 
 export const Collection = () => {
@@ -14,6 +14,10 @@ export const Collection = () => {
     const { collectionId } = useParams()
 
     const history = useHistory()
+
+    const toastDelete = () => {
+        message.success('Collection was deleted');
+    }
 
     useEffect(() => {
         getCollectionById(collectionId)
@@ -35,7 +39,13 @@ export const Collection = () => {
                                 history.push(`/collection/${collection.id}/edit`)
                             }}
                         />,
-                        <Button type="primary" shape='circle' icon={<DeleteOutlined />} danger />
+                        <Button type="primary" shape='circle' icon={<DeleteOutlined />} danger
+                            onClick={() => {
+                                deleteCollection(collection.id)
+                                    .then(history.push('/'))
+                                    .then(toastDelete())
+                            }}
+                        />
                     ]}
                 />
 
