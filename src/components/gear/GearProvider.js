@@ -11,9 +11,43 @@ export const GearProvider = (props) => {
             .then(setGear)
     }
 
+    const addGear = obj => {
+        return fetch('http://localhost:8088/gear', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(obj)
+        })
+            .then(getGear)
+    }
+
+    const editGear = obj => {
+        return fetch(`http://localhost:8088/gear/${obj.id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(obj)
+        })
+            .then(getGear)
+    }
+
+    const deleteGear = id => {
+        return fetch(`http://localhost:8088/gear/${id}`, {
+            method: 'DELETE'
+        })
+            .then(getGear)
+    }
+
+    const getGearById = id => {
+        return fetch(`http://localhost:8088/gear/${id}`)
+            .then(res => res.json())
+    }
+
     return (
         <GearContext.Provider value={{
-            gear, getGear
+            gear, getGear, addGear, editGear, deleteGear, getGearById
         }}>
             {props.children}
         </GearContext.Provider>
