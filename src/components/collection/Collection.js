@@ -3,8 +3,8 @@ import { useParams, useHistory } from 'react-router-dom'
 import { CollectionContext } from './CollectionProvider'
 import { GearList } from '../gear/GearList'
 
-import { Button, Row, Col, PageHeader, Table, message } from 'antd'
-import { EditOutlined, DeleteOutlined } from '@ant-design/icons'
+import { Button, Row, Col, PageHeader, message } from 'antd'
+import { EditOutlined, DeleteOutlined, PlusCircleOutlined } from '@ant-design/icons'
 
 export const Collection = () => {
     const { getCollectionById, deleteCollection } = useContext(CollectionContext)
@@ -48,6 +48,14 @@ export const Collection = () => {
                         />
                     ]}
                 />
+
+                <Button id='addGearBtn' icon={<PlusCircleOutlined />}
+                    onClick={() => {
+                        history.push(`/collection/${collection.id}/gear/new`)
+                    }}
+                >
+                    Add Gear
+                </Button>
 
                 <GearList collectionId={collection.id} />
             </Col>

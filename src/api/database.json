@@ -84,6 +84,15 @@
       "desc": "Canon EF f/1.8",
       "available": true,
       "id": 3
+    },
+    {
+      "userId": 1,
+      "collectionId": 2,
+      "type": "Camera",
+      "name": "Canon EOS R",
+      "desc": "Mirrorless, full-frame, RF mount",
+      "available": true,
+      "id": 4
     }
   ],
   "gearUsers": [
