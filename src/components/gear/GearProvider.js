@@ -10,4 +10,12 @@ export const GearProvider = (props) => {
             .then(res => res.json())
             .then(setGear)
     }
+
+    return (
+        <GearContext.Provider value={{
+            gear, getGear
+        }}>
+            {props.children}
+        </GearContext.Provider>
+    )
 }

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
 import { CollectionContext } from './CollectionProvider'
-import { CollectionForm } from './CollectionForm'
+import { GearList } from '../gear/GearList'
 
 import { Button, Row, Col, PageHeader, Table, message } from 'antd'
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons'
@@ -49,7 +49,7 @@ export const Collection = () => {
                     ]}
                 />
 
-                <Table />
+                <GearList />
             </Col>
         </Row>
     )
