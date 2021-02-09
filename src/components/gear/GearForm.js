@@ -59,6 +59,7 @@ export const GearForm = props => {
 
         if (gearId) {
             editGear({
+                id: gear.id,
                 type: gear.type,
                 name: gear.name,
                 desc: gear.desc,

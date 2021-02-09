@@ -4,7 +4,7 @@ import { CollectionContext } from './CollectionProvider'
 import { GearList } from '../gear/GearList'
 
 import { Button, Row, Col, PageHeader, message } from 'antd'
-import { EditOutlined, DeleteOutlined, PlusCircleOutlined } from '@ant-design/icons'
+import { EditOutlined, DeleteOutlined, PlusOutlined } from '@ant-design/icons'
 
 export const Collection = () => {
     const { getCollectionById, deleteCollection } = useContext(CollectionContext)
@@ -49,7 +49,7 @@ export const Collection = () => {
                     ]}
                 />
 
-                <Button id='addGearBtn' icon={<PlusCircleOutlined />}
+                <Button id='addGearBtn' icon={<PlusOutlined />}
                     onClick={() => {
                         history.push(`/collection/${collection.id}/gear/new`)
                     }}
