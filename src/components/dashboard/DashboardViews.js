@@ -20,7 +20,11 @@ export const DashboardViews = () => {
                 <CollectionForm />
             </Route>
 
-            <Route exact path='collection/:collectionId(\d+)/:gearId(\d+)/edit'>
+            <Route exact path='/collection/:collectionId(\d+)/gear/new'>
+                <GearForm />
+            </Route>
+
+            <Route exact path='/collection/:collectionId(\d+)/gear/:gearId(\d+)/edit'>
                 <GearForm />
             </Route>
         </>

@@ -10,6 +10,7 @@ export const GearForm = props => {
     const [gear, setGear] = useState({})
     const [isLoading, setIsLoading] = useState(true)
 
+    const { collectionId } = useParams()
     const { gearId } = useParams()
 
     const history = useHistory()
@@ -87,7 +88,7 @@ export const GearForm = props => {
                     form={form}
                     name="gear-form"
                     className="collection-form"
-                    onFinish={constructNewCollection}
+                    onFinish={constructNewGear}
                 >
                     <Form.Item
                         name="name"
