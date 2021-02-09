@@ -85,7 +85,7 @@ export const GearForm = props => {
 
     return (
         <Row justify='center' align='middle' className='form-container-r'>
-            <Col xs={24} lg={12} className='form-container-c'>
+            <Col xs={24} md={18} xl={12} xxl={6} className='form-container-c'>
                 <h2>{gearId ? 'Edit Gear' : 'Add New Gear'}</h2>
 
                 <Form
