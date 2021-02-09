@@ -68,7 +68,7 @@
             "name": "Canon 70-200mm",
             "desc": "Mid-range lens for events.",
             "photo": "https://static.bhphoto.com/images/images500x500/canon_eos_r_mirrorless_digital_1536120359_1433711.jpg",
-            "available": true
+            "available": false
         }
     ],
     "gearUsers": [

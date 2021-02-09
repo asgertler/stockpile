@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { GearContext } from './GearProvider'
 
-import { Table } from 'antd'
+import { Table, Tag } from 'antd'
 
 export const GearList = (props) => {
     const currentUser = parseInt(localStorage.getItem('stockpileUser'))
@@ -17,6 +17,14 @@ export const GearList = (props) => {
     }, [gearId])
 
     const collectionGear = gear.filter(gear => gear.collectionId === currentCollection)
+
+    const dataSource = collectionGear.map(gear => ({
+        key: gear.id,
+        type: gear.type,
+        name: gear.name,
+        description: gear.desc,
+        available: gear.available
+    }))
 
     const col = [
         {
@@ -40,14 +48,6 @@ export const GearList = (props) => {
             key: 'available'
         }
     ]
-
-    const dataSource = collectionGear.map(gear => ({
-        key: gear.id,
-        type: gear.type,
-        name: gear.name,
-        description: gear.desc,
-        available: gear.available
-    }))
 
     return (
         <Table columns={col} dataSource={dataSource} />
