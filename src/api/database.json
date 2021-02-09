@@ -52,6 +52,7 @@
     "gear": [
         {
             "id": 1,
+            "userId": 1,
             "collectionId": 1,
             "type": "Camera",
             "name": "Canon EOS R",
