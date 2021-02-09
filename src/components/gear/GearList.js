@@ -49,6 +49,7 @@ export const GearList = (props) => {
             title: 'Image',
             dataIndex: 'photo',
             key: 'photo',
+            align: 'center',
             render: photo => <Image height={48} style={{ width: 'auto' }} src={photo} />
         },
         {
@@ -60,6 +61,7 @@ export const GearList = (props) => {
             title: 'Available',
             dataIndex: 'available',
             key: 'available',
+            align: 'center',
             render: available => (
                 <Tag key={available} color={available ? 'green' : 'volcano'}>
                     {available ? 'Yes' : 'No'}
@@ -70,6 +72,7 @@ export const GearList = (props) => {
             title: 'Update',
             dataIndex: 'id',
             key: 'id',
+            align: 'center',
             render: id => <>
                 <Link onClick={() => history.push(`/collection/${currentCollection}/gear/${id}/edit`)}>
                     Edit

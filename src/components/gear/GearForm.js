@@ -63,6 +63,7 @@ export const GearForm = props => {
                 type: gear.type,
                 name: gear.name,
                 desc: gear.desc,
+                photo: gear.photo,
                 available: gear.available
             })
                 .then(() => history.push(`/collection/${gear.collectionId}`))
@@ -74,6 +75,7 @@ export const GearForm = props => {
                 type: gear.type,
                 name: gear.name,
                 desc: gear.desc,
+                photo: gear.photo,
                 available: true
             })
                 .then(history.push(`/collection/${collectionId}`))
@@ -89,11 +91,13 @@ export const GearForm = props => {
                 <Form
                     form={form}
                     name="gear-form"
+                    layout='vertical'
                     className="collection-form"
                     onFinish={constructNewGear}
                 >
                     <Form.Item
                         name="type"
+                        label='Type:'
                         rules={[
                             {
                                 required: true,
@@ -107,6 +111,7 @@ export const GearForm = props => {
 
                     <Form.Item
                         name="name"
+                        label='Name:'
                         rules={[
                             {
                                 required: true,
@@ -120,6 +125,7 @@ export const GearForm = props => {
 
                     <Form.Item
                         name="desc"
+                        label='Description'
                         rules={[
                             {
                                 required: true,
@@ -128,6 +134,11 @@ export const GearForm = props => {
                         ]}
                     >
                         <Input name='desc' placeholder="Gear Description"
+                            onChange={handleControlledInputChange} />
+                    </Form.Item>
+
+                    <Form.Item name="photo" label='Image'>
+                        <Input name='photo' placeholder="Insert image URL here"
                             onChange={handleControlledInputChange} />
                     </Form.Item>
 
