@@ -2,8 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useHistory, useParams } from 'react-router-dom'
 import { CollectionContext } from './CollectionProvider'
 
-import { Row, Col, Form, Input, Button } from 'antd'
-import { formatCountdown } from 'antd/lib/statistic/utils'
+import { Row, Col, Form, Input, Button, message } from 'antd'
 
 export const CollectionForm = () => {
     const { getCollections, addCollection, getCollectionById, editCollection } = useContext(CollectionContext)
@@ -17,11 +16,21 @@ export const CollectionForm = () => {
 
     const currentUser = parseInt(localStorage.getItem('stockpileUser'))
 
+    const toastCreate = () => {
+        message.success('Collection was created');
+    }
+
+    const toastEdit = () => {
+        message.success('Collection was edited');
+    }
+
     const handleControlledInputChange = (e) => {
         const newCollection = { ...collection }
         newCollection[e.target.name] = e.target.value
         setCollection(newCollection)
     }
+
+    const [form] = Form.useForm()
 
     useEffect(() => {
         getCollections().then(() => {
@@ -29,6 +38,10 @@ export const CollectionForm = () => {
                 getCollectionById(collectionId)
                     .then(collection => {
                         setCollection(collection)
+                        form.setFieldsValue({
+                            name: collection.name,
+                            desc: collection.desc
+                        })
                         setIsLoading(false)
                     })
             } else {
@@ -48,6 +61,7 @@ export const CollectionForm = () => {
                 shared: collection.shared
             })
                 .then(() => history.push(`/collection/${collection.id}`))
+                .then(toastEdit())
         } else {
             addCollection({
                 userId: currentUser,
@@ -56,10 +70,9 @@ export const CollectionForm = () => {
                 shared: collection.shared
             })
                 .then(history.push('/'))
+                .then(toastCreate())
         }
     }
-
-    console.log('name: ' + collection.name)
 
     return (
         <Row justify='center' align='middle' className='form-container-r'>
@@ -67,12 +80,9 @@ export const CollectionForm = () => {
                 <h2>{collectionId ? 'Edit Collection' : 'Add New Collection'}</h2>
 
                 <Form
+                    form={form}
                     name="collection-form"
                     className="collection-form"
-                    initialValues={{
-                        'name': collection.name,
-                        'desc': collection.desc
-                    }}
                     onFinish={constructNewCollection}
                 >
                     <Form.Item
