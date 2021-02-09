@@ -93,6 +93,15 @@
       "desc": "Mirrorless, full-frame, RF mount",
       "available": true,
       "id": 4
+    },
+    {
+      "userId": 1,
+      "collectionId": 1,
+      "type": "Camera",
+      "name": "80D",
+      "desc": "Canon, DSLR, crop-sensor, EF mount",
+      "available": true,
+      "id": 5
     }
   ],
   "gearUsers": [

@@ -67,7 +67,9 @@ export const GearList = (props) => {
                 <Link onClick={() => history.push(`/collection/${currentCollection}/gear/${id}/edit`)}>
                     Edit
                 </Link>
+
                 &nbsp; / &nbsp;
+
                 <Link onClick={() => {
                     deleteGear(id)
                         .then(toastDelete())
