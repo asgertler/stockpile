@@ -16,6 +16,8 @@ export const GearList = (props) => {
         getGear()
     }, [gearId])
 
+    const collectionGear = gear.filter(gear => gear.collectionId === currentCollection)
+
     const col = [
         {
             title: 'Type',
@@ -39,9 +41,13 @@ export const GearList = (props) => {
         }
     ]
 
-    const dataSource = []
-
-    const collectionGear = gear.filter(gear => gear.collectionId === currentCollection)
+    const dataSource = collectionGear.map(gear => ({
+        key: gear.id,
+        type: gear.type,
+        name: gear.name,
+        description: gear.desc,
+        available: gear.available
+    }))
 
     return (
         <Table columns={col} dataSource={dataSource} />
