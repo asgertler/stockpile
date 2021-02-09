@@ -3,6 +3,7 @@ import { useHistory, useParams } from 'react-router-dom'
 import { CollectionContext } from './CollectionProvider'
 
 import { Row, Col, Form, Input, Button } from 'antd'
+import { formatCountdown } from 'antd/lib/statistic/utils'
 
 export const CollectionForm = () => {
     const { getCollections, addCollection, getCollectionById, editCollection } = useContext(CollectionContext)
@@ -83,7 +84,8 @@ export const CollectionForm = () => {
                             },
                         ]}
                     >
-                        <Input placeholder="Collection Name" name='name' />
+                        <Input name='name' placeholder="Collection Name"
+                            onChange={handleControlledInputChange} />
                     </Form.Item>
 
                     <Form.Item
@@ -95,7 +97,8 @@ export const CollectionForm = () => {
                             },
                         ]}
                     >
-                        <Input placeholder="Description (e.g., 'Gear stored in the office closet'" name='desc' />
+                        <Input name='desc' placeholder="Description (e.g., 'Gear stored in the office closet'"
+                            onChange={handleControlledInputChange} />
                     </Form.Item>
 
                     <Form.Item className='form-btns-container'>
