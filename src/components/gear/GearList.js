@@ -55,6 +55,6 @@ export const GearList = (props) => {
     ]
 
     return (
-        <Table columns={col} dataSource={dataSource} />
+        <Table bordered columns={col} dataSource={dataSource} />
     )
 }
