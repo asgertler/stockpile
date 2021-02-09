@@ -90,6 +90,25 @@ export const GearForm = props => {
                     className="collection-form"
                     onFinish={constructNewGear}
                 >
+                    <Form.Item name='type'
+                        rules={[
+                            {
+                                required: true,
+                                message: 'Please select a gear type',
+                            },
+                        ]}
+                    >
+                        <Select>
+                            <Select.Option value='Bag/Case'>Bag/Case</Select.Option>
+                            <Select.Option value='Camera'>Camera</Select.Option>
+                            <Select.Option value='Flash/Strobe'>Flash/Strobe</Select.Option>
+                            <Select.Option value='Lens'>Lens</Select.Option>
+                            <Select.Option value='Lens Filter'>Lens Filter</Select.Option>
+                            <Select.Option value='Memory Card'>Memory Card</Select.Option>
+                            <Select.Option value='Other'>Other</Select.Option>
+                        </Select>
+                    </Form.Item>
+
                     <Form.Item
                         name="name"
                         rules={[
