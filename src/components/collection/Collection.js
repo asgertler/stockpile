@@ -59,7 +59,7 @@ export const Collection = () => {
 
                 <GearList collectionId={collection.id} />
 
-                Owned by {collection.userId}
+                Owned by {collection.user.name}
             </Col>
         </Row>
     )

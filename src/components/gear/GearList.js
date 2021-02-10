@@ -1,14 +1,15 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useHistory, Link } from 'react-router-dom'
 import { GearContext } from './GearProvider'
 import { GearSearch } from './GearSearch'
 
-import { Table, Tag, message, Image } from 'antd'
+import { Table, Tag, message, Image, Popconfirm } from 'antd'
 
 export const GearList = (props) => {
     const currentCollection = props.collectionId
 
     const { gear, getGear, deleteGear, searchTerms } = useContext(GearContext)
+    const [collectionGear, setCollectionGear] = useState([])
 
     const toastDelete = () => {
         message.success('Gear was deleted');
@@ -16,9 +17,8 @@ export const GearList = (props) => {
 
     useEffect(() => {
         getGear()
-    }, [])
-
-    const collectionGear = gear.filter(gear => gear.collectionId === currentCollection)
+            .then(setCollectionGear(gear.filter(gear => gear.collectionId === currentCollection)))
+    }, [currentCollection])
 
     const history = useHistory()
 
@@ -81,12 +81,14 @@ export const GearList = (props) => {
 
                 &nbsp; / &nbsp;
 
-                <Link onClick={() => {
-                    deleteGear(id)
-                        .then(toastDelete())
-                }}>
-                    Delete
-                </Link>
+                <Popconfirm title="Are you sure？" okText="Yes" cancelText="No"
+                    onConfirm={() => {
+                        deleteGear(id)
+                            .then(toastDelete())
+                    }}
+                >
+                    <a href="#">Delete</a>
+                </Popconfirm>
             </>
         }
     ]

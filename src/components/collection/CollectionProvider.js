@@ -41,7 +41,7 @@ export const CollectionProvider = (props) => {
     }
 
     const getCollectionById = id => {
-        return fetch(`http://localhost:8088/collections/${id}`)
+        return fetch(`http://localhost:8088/collections/${id}?_expand=user`)
             .then(res => res.json())
     }
 
