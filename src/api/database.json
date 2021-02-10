@@ -74,7 +74,7 @@
       "name": "70-200mm",
       "desc": "Canon, EF, f/2.8",
       "photo": "https://static.bhphoto.com/images/images500x500/canon_3044c002_ef_70_200mm_f_2_8l_is_1528329199_1414599.jpg",
-      "available": false
+      "available": true
     },
     {
       "userId": 1,

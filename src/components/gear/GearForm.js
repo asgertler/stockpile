@@ -160,7 +160,11 @@ export const GearForm = props => {
                         </Button>
 
                         <Checkbox name='available' style={{ float: 'right' }}
-                            onChange={handleControlledCheckboxChange}>
+                            onChange={handleControlledCheckboxChange}
+                            checked={
+                                gear.available ? true : false
+                            }
+                        >
                             Currently Available?
                         </Checkbox>
                     </Form.Item>
