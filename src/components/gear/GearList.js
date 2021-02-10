@@ -1,16 +1,14 @@
 import React, { useContext, useEffect } from 'react'
-import { useHistory, useParams, Link } from 'react-router-dom'
+import { useHistory, Link } from 'react-router-dom'
 import { GearContext } from './GearProvider'
+import { GearSearch } from './GearSearch'
 
 import { Table, Tag, message, Image } from 'antd'
 
 export const GearList = (props) => {
-    const currentUser = parseInt(localStorage.getItem('stockpileUser'))
     const currentCollection = props.collectionId
 
-    const { gear, getGear, deleteGear } = useContext(GearContext)
-
-    const { gearId } = useParams()
+    const { gear, getGear, deleteGear, searchTerms } = useContext(GearContext)
 
     const toastDelete = () => {
         message.success('Collection was deleted');
@@ -18,7 +16,7 @@ export const GearList = (props) => {
 
     useEffect(() => {
         getGear()
-    }, [gearId])
+    }, [])
 
     const collectionGear = gear.filter(gear => gear.collectionId === currentCollection)
 
@@ -91,7 +89,11 @@ export const GearList = (props) => {
     ]
 
     return (
-        <Table bordered columns={col} dataSource={dataSource}
-            pagination={{ position: ['topRight', 'bottomRight'] }} />
+        <>
+            <GearSearch />
+
+            <Table bordered columns={col} dataSource={dataSource}
+                pagination={{ position: ['topRight', 'bottomRight'] }} />
+        </>
     )
 }

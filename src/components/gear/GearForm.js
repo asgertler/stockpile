@@ -31,6 +31,12 @@ export const GearForm = props => {
         setGear(newGear)
     }
 
+    const handleControlledCheckboxChange = (e) => {
+        const newGear = { ...gear }
+        newGear[e.target.name] = e.target.checked
+        setGear(newGear)
+    }
+
     const [form] = Form.useForm()
 
     useEffect(() => {
@@ -153,8 +159,8 @@ export const GearForm = props => {
                             Cancel
                         </Button>
 
-                        <Checkbox name='available' defaultChecked='true' style={{ float: 'right' }}
-                            onChange={handleControlledInputChange}>
+                        <Checkbox name='available' style={{ float: 'right' }}
+                            onChange={handleControlledCheckboxChange}>
                             Currently Available?
                         </Checkbox>
                     </Form.Item>
