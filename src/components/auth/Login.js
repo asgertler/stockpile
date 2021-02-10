@@ -60,7 +60,7 @@ export const Login = () => {
                             <Checkbox>I'm not a robot</Checkbox>
                         </Form.Item>
 
-                        <a className="login-form-forgot" href="">
+                        <a className="login-form-forgot" href="#">
                             Forgot username
                         </a>
                     </Form.Item>
