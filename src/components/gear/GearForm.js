@@ -159,14 +159,18 @@ export const GearForm = props => {
                             Cancel
                         </Button>
 
-                        <Checkbox name='available' style={{ float: 'right' }}
-                            onChange={handleControlledCheckboxChange}
-                            checked={
-                                gear.available ? true : false
-                            }
-                        >
-                            Currently Available?
+                        {gearId ?
+                            <Checkbox name='available' style={{ float: 'right' }}
+                                onChange={handleControlledCheckboxChange}
+                                checked={
+                                    gear.available ? true : false
+                                }
+                            >
+                                Currently Available?
                         </Checkbox>
+                            :
+                            ''
+                        }
                     </Form.Item>
                 </Form>
             </Col>
