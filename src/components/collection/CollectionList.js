@@ -36,7 +36,6 @@ export const CollectionList = () => {
                 <Link to={`/collection/new`} replace>
                     Add New Collection
                 </Link>
-
             </Menu.Item>
         </Menu>
     )
