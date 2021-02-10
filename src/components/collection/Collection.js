@@ -58,6 +58,8 @@ export const Collection = () => {
                 />
 
                 <GearList collectionId={collection.id} />
+
+                Owned by {collection.userId}
             </Col>
         </Row>
     )

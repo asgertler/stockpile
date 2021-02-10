@@ -11,7 +11,7 @@ export const GearList = (props) => {
     const { gear, getGear, deleteGear, searchTerms } = useContext(GearContext)
 
     const toastDelete = () => {
-        message.success('Collection was deleted');
+        message.success('Gear was deleted');
     }
 
     useEffect(() => {
@@ -36,12 +36,14 @@ export const GearList = (props) => {
         {
             title: 'Type',
             dataIndex: 'type',
-            key: 'type'
+            key: 'type',
+            sorter: (a, b) => a.type.localeCompare(b.type)
         },
         {
             title: 'Name',
             dataIndex: 'name',
-            key: 'name'
+            key: 'name',
+            sorter: (a, b) => a.name.localeCompare(b.name)
         },
         {
             title: 'Image',
@@ -64,7 +66,8 @@ export const GearList = (props) => {
                 <Tag key={available} color={available ? 'green' : 'volcano'}>
                     {available ? 'Yes' : 'No'}
                 </Tag>
-            )
+            ),
+            sorter: (a, b) => a.available.toString().localeCompare(b.available.toString())
         },
         {
             title: 'Update',

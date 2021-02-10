@@ -64,7 +64,7 @@
       "name": "EOS R",
       "desc": "Canon, mirrorless, full-frame, RF mount",
       "photo": "https://static.bhphoto.com/images/images500x500/canon_eos_r_mirrorless_digital_1536120359_1433711.jpg",
-      "available": true
+      "available": false
     },
     {
       "id": 2,
@@ -74,7 +74,7 @@
       "name": "70-200mm",
       "desc": "Canon, EF, f/2.8",
       "photo": "https://static.bhphoto.com/images/images500x500/canon_3044c002_ef_70_200mm_f_2_8l_is_1528329199_1414599.jpg",
-      "available": true
+      "available": false
     },
     {
       "userId": 1,
@@ -113,7 +113,7 @@
       "name": "Street Backpack",
       "desc": "Manfrotto, one camera, laptop",
       "photo": "https://static.bhphoto.com/images/images500x500/manfrotto_mb_ms_bp_igr_street_backpack_1441365105_1183081.jpg",
-      "available": true,
+      "available": false,
       "id": 6
     }
   ],
