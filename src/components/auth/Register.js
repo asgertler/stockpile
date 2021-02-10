@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useHistory, Link } from 'react-router-dom'
 
-import { Row, Col, Form, Input, Button, Checkbox, message } from 'antd'
+import { Row, Col, Form, Input, Button, message, Divider } from 'antd'
 import { UserOutlined } from '@ant-design/icons'
 
 export const Register = () => {
@@ -52,6 +52,10 @@ export const Register = () => {
     return (
         <Row justify='center' align='middle' className='auth-container'>
             <Col xs={24} lg={12} className='auth-form-container'>
+                <div className='logo-container'><h1>Stockpile</h1></div>
+
+                <Divider />
+
                 <h2>Register</h2>
 
                 <Form
@@ -101,16 +105,11 @@ export const Register = () => {
                             placeholder="Username" ref={username} />
                     </Form.Item>
 
-                    <Form.Item>
-                        <Form.Item name="remember" valuePropName="unchecked" noStyle>
-                            <Checkbox>I'm not a robot</Checkbox>
-                        </Form.Item>
-                    </Form.Item>
-
-                    <Form.Item>
+                    <Form.Item className='form-last'>
                         <Button type="primary" htmlType="submit" className="login-form-button">
                             Register
                         </Button>
+                        <Link to='/login'>Back to Login</Link>
                     </Form.Item>
                 </Form>
             </Col>
