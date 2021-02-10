@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useHistory, useParams } from 'react-router-dom'
 import { GearContext } from './GearProvider'
 
-import { Row, Col, Form, Input, Button, message, Select } from 'antd'
+import { Row, Col, Form, Input, Button, message, Checkbox } from 'antd'
 
 export const GearForm = props => {
     const { getGear, addGear, getGearById, editGear } = useContext(GearContext)
@@ -152,6 +152,11 @@ export const GearForm = props => {
                         }}>
                             Cancel
                         </Button>
+
+                        <Checkbox name='available' defaultChecked='true' style={{ float: 'right' }}
+                            onChange={handleControlledInputChange}>
+                            Currently Available?
+                        </Checkbox>
                     </Form.Item>
                 </Form>
             </Col>
