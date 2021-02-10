@@ -56,16 +56,6 @@ export const Login = () => {
                     </Form.Item>
 
                     <Form.Item>
-                        <Form.Item name="remember" valuePropName="unchecked" noStyle>
-                            <Checkbox>I'm not a robot</Checkbox>
-                        </Form.Item>
-
-                        <a className="login-form-forgot" href="#">
-                            Forgot username
-                        </a>
-                    </Form.Item>
-
-                    <Form.Item>
                         <Button type="primary" htmlType="submit" className="login-form-button">
                             Log in
                         </Button>
