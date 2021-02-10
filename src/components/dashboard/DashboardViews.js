@@ -1,6 +1,7 @@
 import React from "react"
 import { Route } from "react-router-dom"
 
+import { DashboardDefault } from './DashboardDefault'
 import { Collection } from '../collection/Collection'
 import { CollectionForm } from '../collection/CollectionForm'
 import { GearForm } from '../gear/GearForm'
@@ -8,6 +9,10 @@ import { GearForm } from '../gear/GearForm'
 export const DashboardViews = () => {
     return (
         <>
+            <Route exact path='/'>
+                <DashboardDefault />
+            </Route>
+
             <Route exact path='/collection/:collectionId(\d+)'>
                 <Collection />
             </Route>
