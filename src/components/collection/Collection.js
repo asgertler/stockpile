@@ -3,7 +3,7 @@ import { useParams, useHistory } from 'react-router-dom'
 import { CollectionContext } from './CollectionProvider'
 import { GearList } from '../gear/GearList'
 
-import { Button, Row, Col, PageHeader, message } from 'antd'
+import { Button, Row, Col, PageHeader, message, Popconfirm } from 'antd'
 import { EditOutlined, DeleteOutlined, PlusOutlined } from '@ant-design/icons'
 
 export const Collection = () => {
@@ -47,19 +47,20 @@ export const Collection = () => {
                                 history.push(`/collection/${collection.id}/edit`)
                             }}
                         />,
-                        <Button type="primary" shape='circle' icon={<DeleteOutlined />} danger
-                            onClick={() => {
+
+                        <Popconfirm title="Are you sure？" okText="Yes" cancelText="No"
+                            onConfirm={() => {
                                 deleteCollection(collection.id)
                                     .then(history.push('/'))
                                     .then(toastDelete())
                             }}
-                        />
+                        >
+                            <Button type="primary" shape='circle' icon={<DeleteOutlined />} danger />
+                        </Popconfirm>
                     ]}
                 />
 
                 <GearList collectionId={collection.id} />
-
-                Owned by {collection.user.name}
             </Col>
         </Row>
     )
