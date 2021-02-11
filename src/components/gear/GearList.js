@@ -10,7 +10,6 @@ export const GearList = (props) => {
 
     const { gear, getGear, deleteGear, searchTerms } = useContext(GearContext)
     const [collectionGear, setCollectionGear] = useState([])
-    const [filteredGear, setFilteredGear] = useState([])
 
     const toastDelete = () => {
         message.success('Gear was deleted');
