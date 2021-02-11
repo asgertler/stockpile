@@ -22,7 +22,7 @@ export const GearList = (props) => {
 
     useEffect(() => {
         if (searchTerms !== "") {
-            const subset = collectionGear.filter(gear => gear.name.toLowerCase().includes(searchTerms))
+            const subset = collectionGear.filter(gear => gear.name.toLowerCase().includes(searchTerms) || gear.type.toLowerCase().includes(searchTerms))
             setCollectionGear(subset)
         } else {
             setCollectionGear(gear.filter(gear => gear.collectionId === currentCollection))
