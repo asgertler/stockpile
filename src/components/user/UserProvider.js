@@ -3,19 +3,19 @@ import React, { useState, createContext } from 'react'
 export const UserContext = createContext()
 
 export const UserProvider = (props) => {
-    const [collections, setCollections] = useState([])
+    const [users, setUsers] = useState([])
 
-    const getCollections = () => {
-        return fetch('http://localhost:8088/collections?_expand=user')
+    const getUsers = () => {
+        return fetch('http://localhost:8088/users')
             .then(res => res.json())
-            .then(setCollections)
+            .then(setUsers)
     }
 
     return (
-        <CollectionContext.Provider value={{
-            collections, getCollections
+        <UserContext.Provider value={{
+            users, getUsers
         }}>
             {props.children}
-        </CollectionContext.Provider>
+        </UserContext.Provider>
     )
 }

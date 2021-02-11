@@ -1,229 +1,229 @@
 {
-  "users": [
-    {
-      "id": 1,
-      "name": "Aaron Gertler",
-      "username": "aaron.gertler",
-      "photo": "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/12308453_3180332659839_4100614624798289788_n.jpg?_nc_cat=100&ccb=2&_nc_sid=09cbfe&_nc_ohc=C1zCFIbaQScAX8CCeuQ&_nc_ht=scontent-atl3-1.xx&oh=7f72d810b8b9a75aa2f2aff27e68611e&oe=603ED68B"
-    },
-    {
-      "id": 2,
-      "name": "Ansel Adams",
-      "username": "ansel.adams",
-      "photo": "https://commons.wikimedia.org/wiki/File:Ansel_Adams_and_camera.jpg#/media/File:Ansel_Adams_and_camera.jpg"
-    }
-  ],
-  "teams": [
-    {
-      "id": 1,
-      "userId": 1,
-      "collectionId": 1
-    }
-  ],
-  "teamUsers": [
-    {
-      "id": 1,
-      "userId": 1,
-      "teamId": 1
-    },
-    {
-      "id": 2,
-      "userId": 2,
-      "teamId": 1
-    }
-  ],
-  "messages": [
-    {
-      "id": 1,
-      "userId": 1,
-      "teamId": 1,
-      "message": "Welcome to Stockpile!",
-      "timestamp": "10/29/2020, 1:24 PM"
-    }
-  ],
-  "collections": [
-    {
-      "id": 1,
-      "userId": 1,
-      "name": "Home Studio",
-      "desc": "Gear for freelance and personal use."
-    },
-    {
-      "userId": 1,
-      "name": "Studio 615",
-      "desc": "272 Broadmoor Dr, Nashville, TN 37207",
-      "id": 2
-    }
-  ],
-  "gear": [
-    {
-      "userId": 1,
-      "collectionId": 2,
-      "type": "Camera",
-      "name": "EOS R 1",
-      "desc": "Canon, mirrorless, full-frame, RF mount",
-      "photo": "https://static.bhphoto.com/images/images500x500/canon_eos_r_mirrorless_digital_1536120359_1433710.jpg",
-      "available": true,
-      "id": 4
-    },
-    {
-      "userId": 1,
-      "collectionId": 1,
-      "type": "Memory Card",
-      "name": "256GB SD 1",
-      "desc": "San-Disk Extreme Pro",
-      "photo": "https://static.bhphoto.com/images/images500x500/sandisk_sdsdxxy_256g_ancin_extremepro_sdxc_256gb_card_1535108754_1431035.jpg",
-      "available": false,
-      "id": 5
-    },
-    {
-      "userId": 1,
-      "collectionId": 1,
-      "type": "Camera",
-      "name": "EOS R",
-      "desc": "Canon, mirrorless, full-frame, RF mount",
-      "photo": "https://static.bhphoto.com/images/images500x500/canon_eos_r_mirrorless_digital_1536120359_1433710.jpg",
-      "available": false,
-      "id": 6
-    },
-    {
-      "userId": 1,
-      "collectionId": 1,
-      "type": "Lens",
-      "name": "70-200mm",
-      "desc": "Tamron, f/2.8, EF mount",
-      "photo": "https://static.bhphoto.com/images/images500x500/tamron_afa025c_700_sp_70_200mm_f_2_8_di_1486405329_1317271.jpg",
-      "available": false,
-      "id": 7
-    },
-    {
-      "userId": 1,
-      "collectionId": 1,
-      "type": "Lens",
-      "name": "50mm",
-      "desc": "Canon, f/1.8, EF mount",
-      "photo": "https://static.bhphoto.com/images/images500x500/canon_0570c002_ef_50mm_f_1_8_stm_1431301825_1143786.jpg",
-      "available": true,
-      "id": 8
-    },
-    {
-      "userId": 1,
-      "collectionId": 1,
-      "type": "Lens",
-      "name": "EOS R Adapter",
-      "desc": "Canon, EF/EF-S lens adapter",
-      "photo": "https://static.bhphoto.com/images/images500x500/canon_mount_adapter_ef_rf_1536859268_1433717.jpg",
-      "available": false,
-      "id": 9
-    },
-    {
-      "userId": 1,
-      "collectionId": 1,
-      "type": "Bag/Case",
-      "name": "Street Backpack",
-      "desc": "Manfrotto, one camera, laptop",
-      "photo": "https://static.bhphoto.com/images/images500x500/manfrotto_mb_ms_bp_igr_street_backpack_1441365105_1183081.jpg",
-      "available": false,
-      "id": 10
-    },
-    {
-      "userId": 1,
-      "collectionId": 1,
-      "type": "Memory Card",
-      "name": "256GB SD 2",
-      "desc": "San-Disk Extreme Pro",
-      "photo": "https://static.bhphoto.com/images/images500x500/sandisk_sdsdxxy_256g_ancin_extremepro_sdxc_256gb_card_1535108754_1431035.jpg",
-      "available": true,
-      "id": 11
-    },
-    {
-      "userId": 1,
-      "collectionId": 1,
-      "type": "Support",
-      "name": "Travel tripod",
-      "desc": "Manfrotto, ball head, lever lock, 59.1\" max",
-      "photo": "https://static.bhphoto.com/images/images500x500/manfrotto_mkbfrla4bk_bhus_befree_advanced_travel_tripod_1508716265_1367494.jpg",
-      "available": true,
-      "id": 12
-    },
-    {
-      "userId": 1,
-      "collectionId": 1,
-      "type": "Camera",
-      "name": "80D",
-      "desc": "Canon, DSLR, crop-sensor, EF mount",
-      "photo": "https://static.bhphoto.com/images/images500x500/canon_1263c004_eos_80d_dslr_camera_1455749513_1225875.jpg",
-      "available": true,
-      "id": 13
-    },
-    {
-      "userId": 1,
-      "collectionId": 1,
-      "type": "Battery",
-      "name": "EOS R Battery 1",
-      "desc": "Canon Li-ion 2130mAh",
-      "photo": "https://static.bhphoto.com/images/images500x500/canon_lp_e6nh_lithium_ion_battery_1594281159_1573782.jpg",
-      "available": false,
-      "id": 14
-    },
-    {
-      "userId": 1,
-      "collectionId": 1,
-      "type": "Battery",
-      "name": "EOS R Battery 2",
-      "desc": "Canon Li-ion 2130mAh",
-      "photo": "https://static.bhphoto.com/images/images500x500/canon_lp_e6nh_lithium_ion_battery_1594281159_1573782.jpg",
-      "available": true,
-      "id": 15
-    },
-    {
-      "userId": 1,
-      "collectionId": 1,
-      "type": "Computer",
-      "name": "Surface Book 2",
-      "desc": "Microsoft, 13.5\", 1TB SSD, 32GB RAM ",
-      "photo": "https://static.bhphoto.com/images/multiple_images/images500x500/1588763790_IMG_1353292.jpg",
-      "available": false,
-      "id": 16
-    },
-    {
-      "userId": 1,
-      "collectionId": 1,
-      "type": "Flash/Strobe",
-      "name": "Hotshoe Flash",
-      "desc": "Godox TT685C Thinklite",
-      "photo": "https://static.bhphoto.com/images/images500x500/godox_tt685c_ttl_camera_speedlite_1506610247_1341883.jpg",
-      "available": true,
-      "id": 17
-    },
-    {
-      "userId": 1,
-      "collectionId": 2,
-      "type": "Computer",
-      "name": "Editing Station 1",
-      "desc": "Apple iMac, 27\", 5K, 3.8 GHz i7, 512GB SSD, 16GB RAM",
-      "photo": "https://static.bhphoto.com/images/images500x500/apple_z0zx_mxwv_02_bh_imac_27_3_8g_8c_10g_i7_16gb_512gb_rp_5500_xt_1596560942_1581914.jpg",
-      "available": true,
-      "id": 18
-    },
-    {
-      "userId": 1,
-      "collectionId": 2,
-      "type": "Computer",
-      "name": "Mobile Station 1",
-      "desc": "Apple MacBook Pro, 16\", Retina, 2.6 GHz i7, 512GB SSD, 16GM RAM",
-      "photo": "https://static.bhphoto.com/images/images500x500/apple_mvvj2ll_a_16_macbook_pro_late_1573663014_1520434.jpg",
-      "available": true,
-      "id": 19
-    }
-  ],
-  "gearUsers": [
-    {
-      "id": 1,
-      "userId": 1,
-      "gearId": 1,
-      "checkOut": "10/14/2020, 12:54 PM",
-      "checkIn": "10/18/2020, 3:14 PM"
-    }
-  ]
+    "users": [
+        {
+            "id": 1,
+            "name": "Aaron Gertler",
+            "username": "aaron.gertler",
+            "photo": "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/12308453_3180332659839_4100614624798289788_n.jpg?_nc_cat=100&ccb=2&_nc_sid=09cbfe&_nc_ohc=C1zCFIbaQScAX8CCeuQ&_nc_ht=scontent-atl3-1.xx&oh=7f72d810b8b9a75aa2f2aff27e68611e&oe=603ED68B"
+        },
+        {
+            "id": 2,
+            "name": "Ansel Adams",
+            "username": "ansel.adams",
+            "photo": "https://commons.wikimedia.org/wiki/File:Ansel_Adams_and_camera.jpg#/media/File:Ansel_Adams_and_camera.jpg"
+        }
+    ],
+    "teams": [
+        {
+            "id": 1,
+            "userId": 1,
+            "collectionId": 1
+        }
+    ],
+    "teamUsers": [
+        {
+            "id": 1,
+            "userId": 1,
+            "teamId": 1
+        },
+        {
+            "id": 2,
+            "userId": 2,
+            "teamId": 1
+        }
+    ],
+    "messages": [
+        {
+            "id": 1,
+            "userId": 1,
+            "teamId": 1,
+            "message": "Welcome to Stockpile!",
+            "timestamp": "10/29/2020, 1:24 PM"
+        }
+    ],
+    "collections": [
+        {
+            "id": 1,
+            "userId": 1,
+            "name": "Home Studio",
+            "desc": "Gear for freelance and personal use."
+        },
+        {
+            "userId": 1,
+            "name": "Studio 615",
+            "desc": "272 Broadmoor Dr, Nashville, TN 37207",
+            "id": 2
+        }
+    ],
+    "gear": [
+        {
+            "userId": 1,
+            "collectionId": 2,
+            "type": "Camera",
+            "name": "EOS R 1",
+            "desc": "Canon, mirrorless, full-frame, RF mount",
+            "photo": "https://static.bhphoto.com/images/images500x500/canon_eos_r_mirrorless_digital_1536120359_1433710.jpg",
+            "available": true,
+            "id": 4
+        },
+        {
+            "userId": 1,
+            "collectionId": 1,
+            "type": "Memory Card",
+            "name": "256GB SD 1",
+            "desc": "San-Disk Extreme Pro",
+            "photo": "https://static.bhphoto.com/images/images500x500/sandisk_sdsdxxy_256g_ancin_extremepro_sdxc_256gb_card_1535108754_1431035.jpg",
+            "available": false,
+            "id": 5
+        },
+        {
+            "userId": 1,
+            "collectionId": 1,
+            "type": "Camera",
+            "name": "EOS R",
+            "desc": "Canon, mirrorless, full-frame, RF mount",
+            "photo": "https://static.bhphoto.com/images/images500x500/canon_eos_r_mirrorless_digital_1536120359_1433710.jpg",
+            "available": false,
+            "id": 6
+        },
+        {
+            "userId": 1,
+            "collectionId": 1,
+            "type": "Lens",
+            "name": "70-200mm",
+            "desc": "Tamron, f/2.8, EF mount",
+            "photo": "https://static.bhphoto.com/images/images500x500/tamron_afa025c_700_sp_70_200mm_f_2_8_di_1486405329_1317271.jpg",
+            "available": false,
+            "id": 7
+        },
+        {
+            "userId": 1,
+            "collectionId": 1,
+            "type": "Lens",
+            "name": "50mm",
+            "desc": "Canon, f/1.8, EF mount",
+            "photo": "https://static.bhphoto.com/images/images500x500/canon_0570c002_ef_50mm_f_1_8_stm_1431301825_1143786.jpg",
+            "available": true,
+            "id": 8
+        },
+        {
+            "userId": 1,
+            "collectionId": 1,
+            "type": "Lens",
+            "name": "EOS R Adapter",
+            "desc": "Canon, EF/EF-S lens adapter",
+            "photo": "https://static.bhphoto.com/images/images500x500/canon_mount_adapter_ef_rf_1536859268_1433717.jpg",
+            "available": false,
+            "id": 9
+        },
+        {
+            "userId": 1,
+            "collectionId": 1,
+            "type": "Bag/Case",
+            "name": "Street Backpack",
+            "desc": "Manfrotto, one camera, laptop",
+            "photo": "https://static.bhphoto.com/images/images500x500/manfrotto_mb_ms_bp_igr_street_backpack_1441365105_1183081.jpg",
+            "available": false,
+            "id": 10
+        },
+        {
+            "userId": 1,
+            "collectionId": 1,
+            "type": "Memory Card",
+            "name": "256GB SD 2",
+            "desc": "San-Disk Extreme Pro",
+            "photo": "https://static.bhphoto.com/images/images500x500/sandisk_sdsdxxy_256g_ancin_extremepro_sdxc_256gb_card_1535108754_1431035.jpg",
+            "available": true,
+            "id": 11
+        },
+        {
+            "userId": 1,
+            "collectionId": 1,
+            "type": "Support",
+            "name": "Travel tripod",
+            "desc": "Manfrotto, ball head, lever lock, 59.1\" max",
+            "photo": "https://static.bhphoto.com/images/images500x500/manfrotto_mkbfrla4bk_bhus_befree_advanced_travel_tripod_1508716265_1367494.jpg",
+            "available": true,
+            "id": 12
+        },
+        {
+            "userId": 1,
+            "collectionId": 1,
+            "type": "Camera",
+            "name": "80D",
+            "desc": "Canon, DSLR, crop-sensor, EF mount",
+            "photo": "https://static.bhphoto.com/images/images500x500/canon_1263c004_eos_80d_dslr_camera_1455749513_1225875.jpg",
+            "available": true,
+            "id": 13
+        },
+        {
+            "userId": 1,
+            "collectionId": 1,
+            "type": "Battery",
+            "name": "EOS R Battery 1",
+            "desc": "Canon Li-ion 2130mAh",
+            "photo": "https://static.bhphoto.com/images/images500x500/canon_lp_e6nh_lithium_ion_battery_1594281159_1573782.jpg",
+            "available": false,
+            "id": 14
+        },
+        {
+            "userId": 1,
+            "collectionId": 1,
+            "type": "Battery",
+            "name": "EOS R Battery 2",
+            "desc": "Canon Li-ion 2130mAh",
+            "photo": "https://static.bhphoto.com/images/images500x500/canon_lp_e6nh_lithium_ion_battery_1594281159_1573782.jpg",
+            "available": true,
+            "id": 15
+        },
+        {
+            "userId": 1,
+            "collectionId": 1,
+            "type": "Computer",
+            "name": "Surface Book 2",
+            "desc": "Microsoft, 13.5\", 1TB SSD, 32GB RAM ",
+            "photo": "https://static.bhphoto.com/images/multiple_images/images500x500/1588763790_IMG_1353292.jpg",
+            "available": false,
+            "id": 16
+        },
+        {
+            "userId": 1,
+            "collectionId": 1,
+            "type": "Flash/Strobe",
+            "name": "Hotshoe Flash",
+            "desc": "Godox TT685C Thinklite",
+            "photo": "https://static.bhphoto.com/images/images500x500/godox_tt685c_ttl_camera_speedlite_1506610247_1341883.jpg",
+            "available": true,
+            "id": 17
+        },
+        {
+            "userId": 1,
+            "collectionId": 2,
+            "type": "Computer",
+            "name": "Editing Station 1",
+            "desc": "Apple iMac, 27\", 5K, 3.8 GHz i7, 512GB SSD, 16GB RAM",
+            "photo": "https://static.bhphoto.com/images/images500x500/apple_z0zx_mxwv_02_bh_imac_27_3_8g_8c_10g_i7_16gb_512gb_rp_5500_xt_1596560942_1581914.jpg",
+            "available": true,
+            "id": 18
+        },
+        {
+            "userId": 1,
+            "collectionId": 2,
+            "type": "Computer",
+            "name": "Mobile Station 1",
+            "desc": "Apple MacBook Pro, 16\", Retina, 2.6 GHz i7, 512GB SSD, 16GM RAM",
+            "photo": "https://static.bhphoto.com/images/images500x500/apple_mvvj2ll_a_16_macbook_pro_late_1573663014_1520434.jpg",
+            "available": true,
+            "id": 19
+        }
+    ],
+    "gearUsers": [
+        {
+            "id": 1,
+            "userId": 1,
+            "gearId": 1,
+            "checkOut": "10/14/2020, 12:54 PM",
+            "checkIn": "10/18/2020, 3:14 PM"
+        }
+    ]
 }
