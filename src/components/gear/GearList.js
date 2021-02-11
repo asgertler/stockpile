@@ -107,7 +107,12 @@ export const GearList = (props) => {
             <GearSearch />
 
             <Table bordered columns={col} dataSource={dataSource}
-                pagination={{ position: ['topRight', 'bottomRight'] }} />
+                pagination={{
+                    position: ['topRight', 'bottomRight'],
+                    defaultPageSize: 10,
+                    showSizeChanger: true,
+                    pageSizeOptions: ['10', '25', '50']
+                }} />
         </>
     )
 }

@@ -155,6 +155,26 @@
       "photo": "https://static.bhphoto.com/images/images500x500/canon_1263c004_eos_80d_dslr_camera_1455749513_1225875.jpg",
       "available": true,
       "id": 13
+    },
+    {
+      "userId": 1,
+      "collectionId": 1,
+      "type": "Battery",
+      "name": "EOS R Battery 1",
+      "desc": "Canon Li-ion 2130mAh",
+      "photo": "https://static.bhphoto.com/images/images500x500/canon_lp_e6nh_lithium_ion_battery_1594281159_1573782.jpg",
+      "available": true,
+      "id": 14
+    },
+    {
+      "userId": 1,
+      "collectionId": 1,
+      "type": "Battery",
+      "name": "EOS R Battery 2",
+      "desc": "Canon Li-ion 2130mAh",
+      "photo": "https://static.bhphoto.com/images/images500x500/canon_lp_e6nh_lithium_ion_battery_1594281159_1573782.jpg",
+      "available": true,
+      "id": 15
     }
   ],
   "gearUsers": [
