@@ -73,7 +73,7 @@
       "name": "256GB SD 1",
       "desc": "San-Disk Extreme Pro",
       "photo": "https://static.bhphoto.com/images/images500x500/sandisk_sdsdxxy_256g_ancin_extremepro_sdxc_256gb_card_1535108754_1431035.jpg",
-      "available": true,
+      "available": false,
       "id": 5
     },
     {
@@ -83,7 +83,7 @@
       "name": "EOS R",
       "desc": "Canon, mirrorless, full-frame, RF mount",
       "photo": "https://static.bhphoto.com/images/images500x500/canon_eos_r_mirrorless_digital_1536120359_1433710.jpg",
-      "available": true,
+      "available": false,
       "id": 6
     },
     {
@@ -93,7 +93,7 @@
       "name": "70-200mm",
       "desc": "Tamron, f/2.8, EF mount",
       "photo": "https://static.bhphoto.com/images/images500x500/tamron_afa025c_700_sp_70_200mm_f_2_8_di_1486405329_1317271.jpg",
-      "available": true,
+      "available": false,
       "id": 7
     },
     {
@@ -113,7 +113,7 @@
       "name": "EOS R Adapter",
       "desc": "Canon, EF/EF-S lens adapter",
       "photo": "https://static.bhphoto.com/images/images500x500/canon_mount_adapter_ef_rf_1536859268_1433717.jpg",
-      "available": true,
+      "available": false,
       "id": 9
     },
     {
@@ -123,7 +123,7 @@
       "name": "Street Backpack",
       "desc": "Manfrotto, one camera, laptop",
       "photo": "https://static.bhphoto.com/images/images500x500/manfrotto_mb_ms_bp_igr_street_backpack_1441365105_1183081.jpg",
-      "available": true,
+      "available": false,
       "id": 10
     },
     {
@@ -163,7 +163,7 @@
       "name": "EOS R Battery 1",
       "desc": "Canon Li-ion 2130mAh",
       "photo": "https://static.bhphoto.com/images/images500x500/canon_lp_e6nh_lithium_ion_battery_1594281159_1573782.jpg",
-      "available": true,
+      "available": false,
       "id": 14
     },
     {
@@ -183,7 +183,7 @@
       "name": "Surface Book 2",
       "desc": "Microsoft, 13.5\", 1TB SSD, 32GB RAM ",
       "photo": "https://static.bhphoto.com/images/multiple_images/images500x500/1588763790_IMG_1353292.jpg",
-      "available": true,
+      "available": false,
       "id": 16
     },
     {

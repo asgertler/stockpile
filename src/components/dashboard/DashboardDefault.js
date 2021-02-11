@@ -3,6 +3,8 @@ import React from 'react'
 import { Row, Col } from 'antd'
 
 export const DashboardDefault = () => {
+    const currentUser = parseInt(localStorage.getItem('stockpileUser'))
+
     return (
         <Row justify='center' align='middle' className='default-row'>
             <Col className='default-col'>
