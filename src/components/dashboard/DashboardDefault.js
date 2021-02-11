@@ -11,9 +11,9 @@ export const DashboardDefault = () => {
 
     useEffect(() => {
         getUsers()
-            .then(console.log(users))
-        // .then(setUser(users.filter(user => user.id === currentUser)))
-    }, [])
+            .then(setUser(users.filter(user => user.id === currentUser)))
+    }, [currentUser])
+    console.log(user)
     // const fullName = user.name
     // const nameArr = fullName.split(" ")
     // const firstName = nameArr[0]
@@ -35,7 +35,8 @@ export const DashboardDefault = () => {
             <Col className='default-col'>
                 <h2>{timeGreeting} {'firstName'}!</h2>
 
-                <p>Click on one of your collections in the sidebar to see your list of gear, or click the plus to add a new one!</p>
+                <p>Click on one of your collections in the sidebar to see your list of gear,
+                    or click the plus to add a new one!</p>
             </Col>
         </Row>
     )
