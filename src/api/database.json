@@ -60,9 +60,9 @@
       "userId": 1,
       "collectionId": 2,
       "type": "Camera",
-      "name": "Canon EOS R",
-      "desc": "Mirrorless, full-frame, RF mount",
-      "photo": "https://static.bhphoto.com/images/images500x500/canon_eos_r_mirrorless_digital_1536120359_1433711.jpg",
+      "name": "EOS R 1",
+      "desc": "Canon, mirrorless, full-frame, RF mount",
+      "photo": "https://static.bhphoto.com/images/images500x500/canon_eos_r_mirrorless_digital_1536120359_1433710.jpg",
       "available": true,
       "id": 4
     },
@@ -175,6 +175,46 @@
       "photo": "https://static.bhphoto.com/images/images500x500/canon_lp_e6nh_lithium_ion_battery_1594281159_1573782.jpg",
       "available": true,
       "id": 15
+    },
+    {
+      "userId": 1,
+      "collectionId": 1,
+      "type": "Computer",
+      "name": "Surface Book 2",
+      "desc": "Microsoft, 13.5\", 1TB SSD, 32GB RAM ",
+      "photo": "https://static.bhphoto.com/images/multiple_images/images500x500/1588763790_IMG_1353292.jpg",
+      "available": true,
+      "id": 16
+    },
+    {
+      "userId": 1,
+      "collectionId": 1,
+      "type": "Flash/Strobe",
+      "name": "Hotshoe Flash",
+      "desc": "Godox TT685C Thinklite",
+      "photo": "https://static.bhphoto.com/images/images500x500/godox_tt685c_ttl_camera_speedlite_1506610247_1341883.jpg",
+      "available": true,
+      "id": 17
+    },
+    {
+      "userId": 1,
+      "collectionId": 2,
+      "type": "Computer",
+      "name": "Editing Station 1",
+      "desc": "Apple iMac, 27\", 5K, 3.8 GHz i7, 512GB SSD, 16GB RAM",
+      "photo": "https://static.bhphoto.com/images/images500x500/apple_z0zx_mxwv_02_bh_imac_27_3_8g_8c_10g_i7_16gb_512gb_rp_5500_xt_1596560942_1581914.jpg",
+      "available": true,
+      "id": 18
+    },
+    {
+      "userId": 1,
+      "collectionId": 2,
+      "type": "Computer",
+      "name": "Mobile Station 1",
+      "desc": "Apple MacBook Pro, 16\", Retina, 2.6 GHz i7, 512GB SSD, 16GM RAM",
+      "photo": "https://static.bhphoto.com/images/images500x500/apple_mvvj2ll_a_16_macbook_pro_late_1573663014_1520434.jpg",
+      "available": true,
+      "id": 19
     }
   ],
   "gearUsers": [
