@@ -10,6 +10,7 @@ export const GearList = (props) => {
 
     const { gear, getGear, deleteGear, searchTerms } = useContext(GearContext)
     const [collectionGear, setCollectionGear] = useState([])
+    const [filteredGear, setFilteredGear] = useState([])
 
     const toastDelete = () => {
         message.success('Gear was deleted');
@@ -19,6 +20,15 @@ export const GearList = (props) => {
         getGear()
             .then(setCollectionGear(gear.filter(gear => gear.collectionId === currentCollection)))
     }, [currentCollection])
+
+    useEffect(() => {
+        if (searchTerms !== "") {
+            const subset = collectionGear.filter(gear => gear.name.toLowerCase().includes(searchTerms))
+            setCollectionGear(subset)
+        } else {
+            setCollectionGear(gear.filter(gear => gear.collectionId === currentCollection))
+        }
+    }, [searchTerms])
 
     const history = useHistory()
 

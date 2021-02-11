@@ -48,7 +48,7 @@ export const GearProvider = (props) => {
 
     return (
         <GearContext.Provider value={{
-            gear, getGear, addGear, editGear, deleteGear, getGearById
+            gear, getGear, addGear, editGear, deleteGear, getGearById, searchTerms, setSearchTerms
         }}>
             {props.children}
         </GearContext.Provider>

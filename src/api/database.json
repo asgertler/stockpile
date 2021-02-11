@@ -145,6 +145,16 @@
       "photo": "https://static.bhphoto.com/images/images500x500/manfrotto_mkbfrla4bk_bhus_befree_advanced_travel_tripod_1508716265_1367494.jpg",
       "available": true,
       "id": 12
+    },
+    {
+      "userId": 1,
+      "collectionId": 1,
+      "type": "Camera",
+      "name": "80D",
+      "desc": "Canon, DSLR, crop-sensor, EF mount",
+      "photo": "https://static.bhphoto.com/images/images500x500/canon_1263c004_eos_80d_dslr_camera_1455749513_1225875.jpg",
+      "available": true,
+      "id": 13
     }
   ],
   "gearUsers": [
