@@ -32,7 +32,9 @@ export const Login = () => {
     return (
         <Row justify='center' align='middle' className='auth-container'>
             <Col xs={24} lg={12} className='auth-form-container'>
-                <div className='logo-container'><h1>Stockpile</h1></div>
+                <div className='logo-container'>
+                    <h1>Stockpile</h1>
+                </div>
 
                 <Divider />
 

@@ -86,6 +86,7 @@ export const GearForm = props => {
             })
                 .then(history.push(`/collection/${collectionId}`))
                 .then(toastCreate())
+                .then(getGear())
         }
     }
 

@@ -76,7 +76,7 @@ export const GearList = (props) => {
                     {available ? 'Yes' : 'No'}
                 </Tag>
             ),
-            sorter: (a, b) => a.available.toString().localeCompare(b.available.toString())
+            sorter: (a, b) => b.available.toString().localeCompare(a.available.toString())
         },
         {
             title: 'Update',
@@ -94,6 +94,7 @@ export const GearList = (props) => {
                     onConfirm={() => {
                         deleteGear(id)
                             .then(toastDelete())
+                            .then(getGear())
                     }}
                 >
                     <a href="#">Delete</a>

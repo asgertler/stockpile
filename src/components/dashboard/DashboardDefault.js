@@ -23,17 +23,17 @@ export const DashboardDefault = () => {
 
     let timeGreeting
     if (currentTime >= 4 && currentTime <= 11) {
-        timeGreeting = "Good Morning, "
+        timeGreeting = "Good Morning"
     } else if (currentTime >= 12 && currentTime <= 19) {
-        timeGreeting = "Good Afternoon, "
+        timeGreeting = "Good Afternoon"
     } else {
-        timeGreeting = "Good Evening, "
+        timeGreeting = "Good Evening"
     }
 
     return (
         <Row justify='center' align='middle' className='default-row'>
             <Col className='default-col'>
-                <h2>{timeGreeting} {'firstName'}!</h2>
+                <h2>{timeGreeting}!</h2>
 
                 <p>Click on one of your collections in the sidebar to see your list of gear,
                     or click the plus to add a new one!</p>
