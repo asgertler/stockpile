@@ -11,12 +11,15 @@ export const DashboardDefault = () => {
 
     useEffect(() => {
         getUsers()
-            .then(setUser(users.filter(user => user.id === currentUser)))
+            .then(setUser(users.filter(user => user?.id === currentUser)))
+            .then(console.log(currentUser))
+            .then(console.log(user.id))
     }, [currentUser])
-    console.log(user)
-    // const fullName = user.name
-    // const nameArr = fullName.split(" ")
+
+    const fullName = user?.name
+    const nameArr = fullName?.split(" ")
     // const firstName = nameArr[0]
+    // console.log(fullName)
 
     const today = new Date()
     const currentTime = today.getHours()
