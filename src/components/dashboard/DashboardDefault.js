@@ -11,8 +11,15 @@ export const DashboardDefault = () => {
 
     useEffect(() => {
         getUsers()
-            .then(setUser(users.filter(user => user?.id === currentUser)))
+            .then(setUser(users.filter(user => user.id === currentUser)))
+    }, [])
+
+    useEffect(() => {
+        getUsers()
+            .then(setUser(users.filter(user => user.id === currentUser)))
     }, [currentUser])
+
+    console.log(user.length)
 
     // const fullName = user[0]?.name
     // const nameArr = fullName?.split(" ")
