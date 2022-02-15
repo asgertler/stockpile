@@ -1,6 +1,6 @@
 # Stockpile, My UI/UX Capstone for Nashville Software School
 
-Visit the live site [here](https://asgertler.github.io/stockpile).
+Visit the live site [here](https://asgertler.github.io/stockpile). (test username: aaron.gertler)
 
 ## Technologies Used
 
@@ -8,6 +8,7 @@ Visit the live site [here](https://asgertler.github.io/stockpile).
 - Dbdiagram
 - CSS3
 - Figma
+- Firebase (WIP)
 - Heroku
 - HTML5
 - Illustrator
