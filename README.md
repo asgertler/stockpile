@@ -1,6 +1,6 @@
 # Stockpile, My UI/UX Capstone for Nashville Software School
 
-Visit the live site [here](https://asgertler.githib.io/stockpile).
+Visit the live site [here](https://asgertler.github.io/stockpile).
 
 ## Technologies Used
 
