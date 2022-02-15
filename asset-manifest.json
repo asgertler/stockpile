@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/stockpile/static/css/main.e9894e53.css",
+    "main.js": "/stockpile/static/js/main.8a626ab1.js",
+    "static/js/377.1f92f45a.chunk.js": "/stockpile/static/js/377.1f92f45a.chunk.js",
+    "index.html": "/stockpile/index.html",
+    "main.e9894e53.css.map": "/stockpile/static/css/main.e9894e53.css.map",
+    "main.8a626ab1.js.map": "/stockpile/static/js/main.8a626ab1.js.map",
+    "377.1f92f45a.chunk.js.map": "/stockpile/static/js/377.1f92f45a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e9894e53.css",
+    "static/js/main.8a626ab1.js"
+  ]
+}
