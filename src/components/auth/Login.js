@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { useHistory, Link } from 'react-router-dom'
 
-import { Row, Col, Form, Input, Button, message, Divider } from 'antd'
+import { Row, Col, Form, Input, Button, message, Divider, Checkbox } from 'antd'
 import { UserOutlined } from '@ant-design/icons'
 
 export const Login = () => {
@@ -13,7 +13,7 @@ export const Login = () => {
     }
 
     const existingUserCheck = () => {
-        return fetch(`http://localhost:8088/users?username=${username.current.state.value}`)
+        return fetch(`https://stockpile-api.herokuapp.com/users?username=${username.current.state.value}`)
             .then(res => res.json())
     }
 
@@ -62,7 +62,17 @@ export const Login = () => {
                             placeholder="Username" ref={username} />
                     </Form.Item>
 
-                    <Form.Item className='form-last'>
+                    <Form.Item>
+                        <Form.Item name="remember" valuePropName="unchecked" noStyle>
+                            <Checkbox>I'm not a robot</Checkbox>
+                        </Form.Item>
+
+                        <a className="login-form-forgot" href="#">
+                            Forgot username
+                        </a>
+                    </Form.Item>
+
+                    <Form.Item>
                         <Button type="primary" htmlType="submit" className="login-form-button">
                             Log in
                         </Button>
