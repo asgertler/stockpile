@@ -7,6 +7,7 @@ import { Foot } from '../footer/Foot'
 import { DashboardViews } from './DashboardViews'
 import { CollectionProvider } from '../collection/CollectionProvider'
 import { GearProvider } from '../gear/GearProvider'
+import { UserProvider } from '../user/UserProvider'
 
 import { Layout } from 'antd'
 
@@ -15,21 +16,23 @@ const { Content } = Layout
 export const Dashboard = () => {
     return (
         <Layout>
-            <CollectionProvider>
-                <GearProvider>
-                    <Sidebar />
+            <UserProvider>
+                <CollectionProvider>
+                    <GearProvider>
+                        <Sidebar />
 
-                    <Layout className='site-layout'>
-                        <TopBar />
+                        <Layout className='site-layout'>
+                            <TopBar />
 
-                        <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
-                            <DashboardViews />
-                        </Content>
+                            <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
+                                <DashboardViews />
+                            </Content>
 
-                        <Foot />
-                    </Layout>
-                </GearProvider>
-            </CollectionProvider>
+                            <Foot />
+                        </Layout>
+                    </GearProvider>
+                </CollectionProvider>
+            </UserProvider>
         </Layout>
     )
 }

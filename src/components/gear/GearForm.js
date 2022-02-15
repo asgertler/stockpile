@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useHistory, useParams } from 'react-router-dom'
 import { GearContext } from './GearProvider'
 
-import { Row, Col, Form, Input, Button, message, Select } from 'antd'
+import { Row, Col, Form, Input, Button, message, Checkbox } from 'antd'
 
 export const GearForm = props => {
     const { getGear, addGear, getGearById, editGear } = useContext(GearContext)
@@ -31,6 +31,12 @@ export const GearForm = props => {
         setGear(newGear)
     }
 
+    const handleControlledCheckboxChange = (e) => {
+        const newGear = { ...gear }
+        newGear[e.target.name] = e.target.checked
+        setGear(newGear)
+    }
+
     const [form] = Form.useForm()
 
     useEffect(() => {
@@ -43,8 +49,8 @@ export const GearForm = props => {
                             type: gear.type,
                             name: gear.name,
                             desc: gear.desc,
+                            photo: gear.photo,
                             available: gear.available
-
                         })
                         setIsLoading(false)
                     })
@@ -63,6 +69,7 @@ export const GearForm = props => {
                 type: gear.type,
                 name: gear.name,
                 desc: gear.desc,
+                photo: gear.photo,
                 available: gear.available
             })
                 .then(() => history.push(`/collection/${gear.collectionId}`))
@@ -74,26 +81,30 @@ export const GearForm = props => {
                 type: gear.type,
                 name: gear.name,
                 desc: gear.desc,
+                photo: gear.photo,
                 available: true
             })
                 .then(history.push(`/collection/${collectionId}`))
                 .then(toastCreate())
+                .then(getGear())
         }
     }
 
     return (
         <Row justify='center' align='middle' className='form-container-r'>
-            <Col xs={24} lg={12} className='form-container-c'>
+            <Col xs={24} md={18} xl={12} xxl={6} className='form-container-c'>
                 <h2>{gearId ? 'Edit Gear' : 'Add New Gear'}</h2>
 
                 <Form
                     form={form}
                     name="gear-form"
+                    layout='vertical'
                     className="collection-form"
                     onFinish={constructNewGear}
                 >
                     <Form.Item
                         name="type"
+                        label='Type:'
                         rules={[
                             {
                                 required: true,
@@ -107,6 +118,7 @@ export const GearForm = props => {
 
                     <Form.Item
                         name="name"
+                        label='Name:'
                         rules={[
                             {
                                 required: true,
@@ -120,6 +132,7 @@ export const GearForm = props => {
 
                     <Form.Item
                         name="desc"
+                        label='Description'
                         rules={[
                             {
                                 required: true,
@@ -128,6 +141,11 @@ export const GearForm = props => {
                         ]}
                     >
                         <Input name='desc' placeholder="Gear Description"
+                            onChange={handleControlledInputChange} />
+                    </Form.Item>
+
+                    <Form.Item name="photo" label='Image'>
+                        <Input name='photo' placeholder="Insert image URL here"
                             onChange={handleControlledInputChange} />
                     </Form.Item>
 
@@ -141,6 +159,19 @@ export const GearForm = props => {
                         }}>
                             Cancel
                         </Button>
+
+                        {gearId ?
+                            <Checkbox name='available' style={{ float: 'right' }}
+                                onChange={handleControlledCheckboxChange}
+                                checked={
+                                    gear.available ? true : false
+                                }
+                            >
+                                Currently Available?
+                        </Checkbox>
+                            :
+                            ''
+                        }
                     </Form.Item>
                 </Form>
             </Col>

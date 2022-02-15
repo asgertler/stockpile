@@ -1,26 +1,33 @@
-import React, { useContext, useEffect } from 'react'
-import { useHistory, useParams, Link } from 'react-router-dom'
+import React, { useContext, useEffect, useState } from 'react'
+import { useHistory, Link } from 'react-router-dom'
 import { GearContext } from './GearProvider'
+import { GearSearch } from './GearSearch'
 
-import { Table, Tag, message } from 'antd'
+import { Table, Tag, message, Image, Popconfirm } from 'antd'
 
 export const GearList = (props) => {
-    const currentUser = parseInt(localStorage.getItem('stockpileUser'))
     const currentCollection = props.collectionId
 
-    const { gear, getGear, deleteGear } = useContext(GearContext)
-
-    const { gearId } = useParams()
+    const { gear, getGear, deleteGear, searchTerms } = useContext(GearContext)
+    const [collectionGear, setCollectionGear] = useState([])
 
     const toastDelete = () => {
-        message.success('Collection was deleted');
+        message.success('Gear was deleted');
     }
 
     useEffect(() => {
         getGear()
-    }, [gearId])
+            .then(setCollectionGear(gear.filter(gear => gear.collectionId === currentCollection)))
+    }, [currentCollection])
 
-    const collectionGear = gear.filter(gear => gear.collectionId === currentCollection)
+    useEffect(() => {
+        if (searchTerms !== "") {
+            const subset = collectionGear.filter(gear => gear.name.toLowerCase().includes(searchTerms) || gear.type.toLowerCase().includes(searchTerms) || gear.desc.toLowerCase().includes(searchTerms))
+            setCollectionGear(subset)
+        } else {
+            setCollectionGear(gear.filter(gear => gear.collectionId === currentCollection))
+        }
+    }, [searchTerms])
 
     const history = useHistory()
 
@@ -29,6 +36,7 @@ export const GearList = (props) => {
         id: gear.id,
         type: gear.type,
         name: gear.name,
+        photo: gear.photo,
         description: gear.desc,
         available: gear.available
     }))
@@ -37,12 +45,21 @@ export const GearList = (props) => {
         {
             title: 'Type',
             dataIndex: 'type',
-            key: 'type'
+            key: 'type',
+            sorter: (a, b) => a.type.localeCompare(b.type)
         },
         {
             title: 'Name',
             dataIndex: 'name',
-            key: 'name'
+            key: 'name',
+            sorter: (a, b) => a.name.localeCompare(b.name)
+        },
+        {
+            title: 'Image',
+            dataIndex: 'photo',
+            key: 'photo',
+            align: 'center',
+            render: photo => <Image height={48} style={{ width: 'auto' }} src={photo} />
         },
         {
             title: 'Description',
@@ -53,16 +70,19 @@ export const GearList = (props) => {
             title: 'Available',
             dataIndex: 'available',
             key: 'available',
+            align: 'center',
             render: available => (
                 <Tag key={available} color={available ? 'green' : 'volcano'}>
                     {available ? 'Yes' : 'No'}
                 </Tag>
-            )
+            ),
+            sorter: (a, b) => b.available.toString().localeCompare(a.available.toString())
         },
         {
             title: 'Update',
             dataIndex: 'id',
             key: 'id',
+            align: 'center',
             render: id => <>
                 <Link onClick={() => history.push(`/collection/${currentCollection}/gear/${id}/edit`)}>
                     Edit
@@ -70,17 +90,30 @@ export const GearList = (props) => {
 
                 &nbsp; / &nbsp;
 
-                <Link onClick={() => {
-                    deleteGear(id)
-                        .then(toastDelete())
-                }}>
-                    Delete
-                </Link>
+                <Popconfirm title="Are you sure？" okText="Yes" cancelText="No"
+                    onConfirm={() => {
+                        deleteGear(id)
+                            .then(toastDelete())
+                            .then(getGear())
+                    }}
+                >
+                    <a href="#">Delete</a>
+                </Popconfirm>
             </>
         }
     ]
 
     return (
-        <Table bordered columns={col} dataSource={dataSource} />
+        <>
+            <GearSearch />
+
+            <Table bordered columns={col} dataSource={dataSource}
+                pagination={{
+                    position: ['topRight', 'bottomRight'],
+                    defaultPageSize: 10,
+                    showSizeChanger: true,
+                    pageSizeOptions: ['10', '25', '50']
+                }} />
+        </>
     )
 }

@@ -83,10 +83,12 @@ export const CollectionForm = () => {
                     form={form}
                     name="collection-form"
                     className="collection-form"
+                    layout='vertical'
                     onFinish={constructNewCollection}
                 >
                     <Form.Item
                         name="name"
+                        label='Name'
                         rules={[
                             {
                                 required: true,
@@ -100,6 +102,7 @@ export const CollectionForm = () => {
 
                     <Form.Item
                         name="desc"
+                        label='Description'
                         rules={[
                             {
                                 required: true,
@@ -107,7 +110,7 @@ export const CollectionForm = () => {
                             },
                         ]}
                     >
-                        <Input name='desc' placeholder="Description (e.g., 'Gear stored in the office closet'"
+                        <Input name='desc' placeholder="Description (e.g., 'Gear stored in the office closet')"
                             onChange={handleControlledInputChange} />
                     </Form.Item>
 

@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { useHistory, Link } from 'react-router-dom'
 
-import { Row, Col, Form, Input, Button, Checkbox, message } from 'antd'
+import { Row, Col, Form, Input, Button, message, Divider, Checkbox } from 'antd'
 import { UserOutlined } from '@ant-design/icons'
 
 export const Login = () => {
@@ -32,11 +32,18 @@ export const Login = () => {
     return (
         <Row justify='center' align='middle' className='auth-container'>
             <Col xs={24} lg={12} className='auth-form-container'>
+                <div className='logo-container'>
+                    <h1>Stockpile</h1>
+                </div>
+
+                <Divider />
+
                 <h2>Login</h2>
 
                 <Form
                     name="normal_login"
                     className="login-form"
+                    layou='vertical'
                     initialValues={{
                         remember: true,
                     }}
@@ -73,6 +80,6 @@ export const Login = () => {
                     </Form.Item>
                 </Form>
             </Col>
-        </Row>
+        </Row >
     )
 }

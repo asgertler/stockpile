@@ -4,6 +4,7 @@ export const GearContext = createContext()
 
 export const GearProvider = (props) => {
     const [gear, setGear] = useState([])
+    const [searchTerms, setSearchTerms] = useState('')
 
     const getGear = () => {
         return fetch('https://stockpile-api.herokuapp.com/gear?_expand=collection&_expand=user')
@@ -47,7 +48,7 @@ export const GearProvider = (props) => {
 
     return (
         <GearContext.Provider value={{
-            gear, getGear, addGear, editGear, deleteGear, getGearById
+            gear, getGear, addGear, editGear, deleteGear, getGearById, searchTerms, setSearchTerms
         }}>
             {props.children}
         </GearContext.Provider>
