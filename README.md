@@ -1,4 +1,4 @@
-# Stockpile, My Front-End UI/UX Capstone for Nashville Software School
+# Stockpile, My UI/UX Capstone for Nashville Software School
 
 Visit the live site [here](https://asgertler.githib.io/stockpile).
 
