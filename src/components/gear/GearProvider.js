@@ -6,13 +6,13 @@ export const GearProvider = (props) => {
     const [gear, setGear] = useState([])
 
     const getGear = () => {
-        return fetch('http://localhost:8088/gear?_expand=collection&_expand=user')
+        return fetch('https://stockpile-api.herokuapp.com/gear?_expand=collection&_expand=user')
             .then(res => res.json())
             .then(setGear)
     }
 
     const addGear = obj => {
-        return fetch('http://localhost:8088/gear', {
+        return fetch('https://stockpile-api.herokuapp.com/gear', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -23,7 +23,7 @@ export const GearProvider = (props) => {
     }
 
     const editGear = obj => {
-        return fetch(`http://localhost:8088/gear/${obj.id}`, {
+        return fetch(`https://stockpile-api.herokuapp.com/gear/${obj.id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
@@ -34,14 +34,14 @@ export const GearProvider = (props) => {
     }
 
     const deleteGear = id => {
-        return fetch(`http://localhost:8088/gear/${id}`, {
+        return fetch(`https://stockpile-api.herokuapp.com/gear/${id}`, {
             method: 'DELETE'
         })
             .then(getGear)
     }
 
     const getGearById = id => {
-        return fetch(`http://localhost:8088/gear/${id}`)
+        return fetch(`https://stockpile-api.herokuapp.com/gear/${id}`)
             .then(res => res.json())
     }
 
