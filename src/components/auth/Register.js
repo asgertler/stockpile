@@ -15,7 +15,7 @@ export const Register = () => {
     }
 
     const existingUserCheck = () => {
-        return fetch(`http://localhost:8088/users?username=${username.current.state.value}`)
+        return fetch(`https://stockpile-api.herokuapp.com/users?username=${username.current.state.value}`)
             .then(res => res.json())
     }
 
@@ -24,7 +24,7 @@ export const Register = () => {
             .then(console.log(username.current.state.value))
             .then(exists => {
                 if (exists[0] === undefined) {
-                    fetch('http://localhost:8088/users', {
+                    fetch('hhttps://stockpile-api.herokuapp.com/users', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
